@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap');
+
+:root {
+    font-size: 10px;
+    background: linear-gradient(to bottom,
+    #03010C 50%,
+    #120113 5%,
+    #38020C 65%,
+    #05020D 100%);
+
+    --fuenteLogoLink: "Righteous", sans-serif;
+    --fuenteTextos: "Raleway", sans-serif;
+
+    --colorContainer: rgba(5, 3, 14, 0.5);
+    --colorBlanco: #FFFFFF;
+    --colorNegro: #000000;
+    --colorPlomo: #D9d9d9;
+    --colorAzul: #0F1640;
+    --colorPlaceholder: #2D2C30;
+
+    color: var(--colorBlanco);
+}
