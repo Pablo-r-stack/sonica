@@ -49,6 +49,11 @@
         align-items: center;
         text-decoration: none;
         font-size: 2rem;
+        font-family: var(--fuenteLogoLink);
+    }
+
+    .links a {
+        font-family: var(--fuenteTextos);
     }
 
     .logo img {
