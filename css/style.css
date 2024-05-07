@@ -36,8 +36,8 @@ h1 {
 }
 
 
-/* TAMAÑO PARA Mobiles */
-/* @media (min-width: 525px) {
+
+/* VISTA MOVIL */
 
 /* HEADER */
 .logo a {
@@ -181,3 +181,9 @@ footer ul li {
     margin-right: 1.5rem;
     margin-top: 1rem;
 }
+
+/* TAMAÑO PARA TABLET */
+@media (min-width: 768px) {}
+
+/* TAMAÑO PARA DESKTOP */
+@media (min-width: 1044px) {}
