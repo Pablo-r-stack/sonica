@@ -36,8 +36,8 @@ h1 {
 }
 
 
-
 /* VISTA MOVIL */
+
 
 /* HEADER */
 .logo a {
@@ -57,15 +57,16 @@ h1 {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 1.5rem;
     align-items: center;
-    margin-bottom: 0.8rem;
     height: 7rem;
 
 }
 
 nav ul {
-    display: flex;
+    /* uculto la lista del navbar */
+    display: none;
     list-style: none;
 }
 
@@ -79,6 +80,7 @@ nav ul li {
     margin-bottom: 3rem;
 }
 
+/* INDEX */
 /* SECTION CART*/
 .titulo-shows {
     font-size: 3rem;
@@ -92,13 +94,16 @@ section {
     width: 90%;
     background-color: var(--colorContainer);
     margin: 0 auto;
+    border-radius: 1rem;
 }
 
 .contenedor-cartas {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .carta {
@@ -156,6 +161,60 @@ section {
     margin-bottom: 3rem;
 }
 
+/* CONTACTO */
+
+.sectionContacto {
+    width: 87%;
+}
+
+.titulo-contacto {
+    margin: 2rem 2.5rem;
+
+    font-size: 2rem;
+}
+
+.formContacto {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin: 0 2.5rem;
+
+
+}
+
+.formContacto input {
+    margin-bottom: 2rem;
+    height: 3rem;
+}
+
+.formContacto label {
+    margin-bottom: 0.5rem;
+}
+
+.sectionContacto textarea {
+    height: 7.5rem;
+}
+
+.btn-contacto {
+    font-size: 1.5rem;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 10rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-family: var(--fuenteLogoLink);
+    background-color: var(--colorAzul);
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+
 
 /* FOOTER */
 footer {
@@ -169,7 +228,6 @@ footer {
     margin: 3rem 0 0;
     font-size: 1.2rem;
     font-family: var(--fuenteLogoLink);
-    /* PREGUNTAR SI IVA ESTA FUENTE ACA EN EL PARRAFO */
 }
 
 footer ul {
@@ -183,7 +241,102 @@ footer ul li {
 }
 
 /* TAMAÑO PARA TABLET */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 2rem 0 3rem;
+        height: 7rem;
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        /* muestro la lista del navbar */
+        display: flex;
+    }
+
+    .titulo-shows {
+        font-size: 3.2rem;
+    }
+
+    .contenedor-cartas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* CONTACTO */
+
+    .titulo-contacto {
+        font-size: 3rem;
+    }
+
+    .btn-contacto {
+        font-size: 2REM;
+    }
+
+    .sectionContacto textarea {
+        height: 19rem;
+    }
+
+    footer {
+        font-size: 1.5rem;
+    }
+}
 
 /* TAMAÑO PARA DESKTOP */
-@media (min-width: 1044px) {}
+@media (min-width: 1044px) {
+
+    section {
+        width: 80%;
+    }
+
+    .contenedor-cartas {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .carta {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .carta:nth-child(1) {
+        grid-column: span 2;
+    }
+
+    .carta img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .carta:nth-child(2),
+    .carta:nth-child(3),
+    .carta:nth-child(4),
+    .carta:nth-child(6) {
+        grid-column: span 1;
+    }
+
+    .carta:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .playlist {
+        width: 60%;
+
+    }
+
+    /* CONTACTO */
+    .sectionContacto {
+        width: 60%;
+    }
+
+    .titulo-contacto {
+        text-align: center;
+    }
+}
