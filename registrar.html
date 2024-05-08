@@ -4,14 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Icono para la pestaña del navegador -->
+    <link rel="icon" href="img/logo/wepik-export-202404182339020TpB.png" type="image/png">
+    <!-- Imagen Informativa al compartir el Link -->
+    <meta property="og:image" content="pagina+imagen">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Registro</title>
 </head>
 
 <body>
     <header>
         <nav>
 
-            <div>
+            <div class="logo">
                 <a href="/index.html"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
                     <p>Sonica</p>
                 </a>
@@ -30,33 +37,28 @@
     </header>
 
     <!-- BANNER -->
-    <img src="img/banner/multi-colored-creativity-close-up-human-eye-generated-by-ai.jpg" alt="banner">
+    <img class="banner" src="img/banner/multi-colored-creativity-close-up-human-eye-generated-by-ai.jpg" alt="banner">
 
     <main>
-        <section>
-            <h1>Registrate</h1>
-            <form action="">
-                <div>
+        <section class="sectionContacto">
+            <h1 class="titulo-contacto">Registrate</h1>
+            <form class="formContacto" action="">
+              
                     <label for="email">Email</label>
                     <input type="email" required placeholder="Ej: sonica@sonica.com">
-                </div>
-                <div>
+
                     <label for="password">Contraseña</label>
                     <input type="password" required placeholder="Contraseña">
-                </div>
-                <div>
+
                     <label for="password">Repetir Contraseña</label>
                     <input type="password" required placeholder="Repite tu contraseña">
-                </div>
-                <div>
+
                     <label for="nombre">Nombre</label>
                     <input type="text" required placeholder="Nombre">
-                </div>
-                <div>
+
                     <label for="apellido">Apellido</label>
                     <input type="text" required placeholder="Apellido">
-                </div>
-                <div>
+                <div class="contenedorRegistro">
                     <label for="pais">Pais</label>
                     <select name="pais" id="pais" required>
                         <option value="">Seleccione Pais</option>
@@ -65,7 +67,7 @@
                         <option value="Es">España</option>
                     </select>
                 </div>
-                <div>
+                <div class="contenedorRegistro">
                     <label for="documento">Documento</label>
                     <select name="documento" id="documento" required>
                         <option value="">Tipo</option>
@@ -76,7 +78,7 @@
                     <input type="number" required placeholder="Numero">
                 </div>
 
-                <button type="submit">Registrar</button>
+                <button class="btn-contacto" type="submit">Registrar</button>
                 <p>todos los campos son obligatorios</p>
             </form>
         </section>

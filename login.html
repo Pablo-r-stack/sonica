@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icono para la pestaña del navegador -->
+    <link rel="icon" href="img/logo/wepik-export-202404182339020TpB.png" type="image/png">
+    <!-- Imagen Informativa al compartir el Link -->
+    <meta property="og:image" content="pagina+imagen">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Iniciar Sesion</title>
 </head>
 
@@ -11,7 +18,7 @@
     <header>
         <nav>
 
-            <div>
+            <div class="logo">
                 <a href="/index.html"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
                     <p>Sonica</p>
                 </a>
@@ -28,34 +35,30 @@
 
         </nav>
     </header>
-    
-     <!-- BANNER -->
-     <img src="img/banner/multi-colored-creativity-close-up-human-eye-generated-by-ai.jpg" alt="banner">
 
-    <main>
-        <section>
-            <h1>Iniciar Sesion</h1>
-            <form action="">
-                <div>
+    <!-- BANNER -->
+    <img class="banner" src="img/banner/multi-colored-creativity-close-up-human-eye-generated-by-ai.jpg" alt="banner">
+
+    <main class="login">
+        <section class="sectionContacto">
+            <h1 class="titulo-contacto">Iniciar Sesion</h1>
+            <form class="formContacto" action="">
                     <label for="">mail</label>
-                    <input type="email" placeholder="sonica@sonica.com">
-                </div>
-                <div>
+                    <input type="email" placeholder="sonica@sonica.com">           
                     <label for="">contraseña</label>
                     <input type="password">
-                </div>
-                <button>Iniciar Sesión</button>
+                <button class="btn-contacto">Iniciar Sesión</button>
             </form>
-            <footer>
-                <p>2024- Todos los derechos reservados</p>
-                <ul>
-                    <li><a>faq</a></li>
-                    <li><a>acerca de</a></li>
-                    <li><a>soporte</a></li>
-                </ul>
-            </footer>
         </section>
     </main>
+    <footer>
+        <p>2024- Todos los derechos reservados</p>
+        <ul>
+            <li><a href="/contacto.html">Contacto</a></li>
+            <li><a href="/acercade.html">Acerca de</a></li>
+            <li><a href="/soporte.html">Soporte</a></li>
+        </ul>
+    </footer>
 </body>
 
 </html>
