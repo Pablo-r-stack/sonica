@@ -35,15 +35,20 @@ h1 {
     font-size: 3.5rem;
 }
 
+h4 {
+    font-size: 1.4rem;
+    font-weight:600;
+    font-family: var(--fuenteTextos);
+}
+
+p{
+    font-size: 1.2rem;
+
+}
 
 /* VISTA MOVIL */
 
-
 /* HEADER */
-body {
-    height: 100%;
-}
-
 .logo a {
     display: flex;
     align-items: center;
@@ -61,16 +66,15 @@ body {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-left: 3rem;
+    justify-content: space-around;
     align-items: center;
+    margin-bottom: 0.8rem;
     height: 7rem;
 
 }
 
 nav ul {
-    /* uculto la lista del navbar */
-    display: none;
+    display: flex;
     list-style: none;
 }
 
@@ -84,8 +88,7 @@ nav ul li {
     margin-bottom: 3rem;
 }
 
-/* INDEX */
-/* SECTION CARD*/
+/* SECTION CART*/
 .titulo-shows {
     font-size: 3rem;
     margin-top: 1rem;
@@ -98,16 +101,19 @@ section {
     width: 90%;
     background-color: var(--colorContainer);
     margin: 0 auto;
-    border-radius: 1rem;
 }
+
+.preguntas{
+    gap:2.2rem;
+    padding: 1.5rem;
+    
+    }
 
 .contenedor-cartas {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    justify-content: center;
 }
 
 .carta {
@@ -127,7 +133,6 @@ section {
     border-radius: 1rem;
     width: 325px;
     height: 150px;
-    
 }
 
 .carta .texto-carta {
@@ -139,6 +144,34 @@ section {
     transform: translate(-50%, -50%);
     padding: 1rem;
     font-family: var(--fuenteTextos);
+}
+
+.carta-pregunta{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    background-color:var(--colorPlomo); 
+    color: var(--colorNegro);
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+
+}
+
+.imgpregunta{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    position: relative;
+    padding: 1.5rem;
+    padding-top: 0.5rem;   
+}
+.carta-pregunta img{
+   width: 5rem;
+   padding: 1rem;
+   margin-block-end: auto;
 }
 
 .texto-carta p:nth-child(1) {
@@ -166,181 +199,8 @@ section {
     margin-bottom: 3rem;
 }
 
-/* CONTACTO */
-
-.sectionContacto {
-    width: 87%;
-}
-
-.titulo-contacto {
-    margin: 2rem 2.5rem;
-    font-size: 2rem;
-}
-
-.formContacto {
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    margin: 0 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.formContacto input {
-    margin-bottom: 2rem;
-    height: 3rem;
-}
-
-.formContacto label {
-    margin-bottom: 0.5rem;
-}
-
-.sectionContacto textarea {
-    height: 7.5rem;
-}
-
-.btn-contacto {
-    font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-family: var(--fuenteLogoLink);
-    background-color: var(--colorAzul);
-    transition: transform 0.4s ease;
-
-    &:hover {
-        transform: scale(1.1);
-    }
-}
-
-/* Login */
-.login {
-    height: 70vh;
-}
-
-/* Registro */
-.contenedorRegistro {
-    display: flex;
-    gap: 5%;
-    align-items: baseline;
-    justify-content: space-between;
-}
-
-
-.contenedorRegistro select,
-.contenedorRegistro input {
-    color: var(--colorPlaceholder);
-    height: 3rem;
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
-/* EVENTO */
-.banda-evento {
-    display: flex;
-    width: 90%;
-    margin: 3rem auto;
-    border-radius: 1rem;
-}
-
-.contenedor-evento {
-    background-color: var(--colorContainer);
-}
-
-.artista {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 1.5rem;
-}
-
-.titulo-evento {
-    font-size: 2.4rem;
-}
-
-.evento {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.descripcion-evento {
-    font-size: 1.2rem;
-}
-
-.datos-evento img {
-    width: 1.5rem;
-}
-
-.datos-evento ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 0.8rem;
-}
-
-.datos-evento ul li img {
-    margin-right: 10px;
-}
-
-.tiempo {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    margin: 2rem auto;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    font-size: 1.4rem;
-    align-items: center;
-}
-
-.tiempo p {
-    font-weight: bold;
-}
-
-.comprar-ticket {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
-    padding: 0 3rem;
-}
-
-.comprar-ticket a {
-    text-align: center;
-
-}
-
-.comprar-ticket p {
-    font-weight: normal;
-    width: 100%;
-}
-
-.mapa {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-    font-size: 1.4rem;
-}
-.mapa h2{
-    padding: 0 1.5rem;
-    font-size: 2rem;
-}
-
-.mapa iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* FOOTER */
 footer {
-    align-self: flex-end;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,6 +211,7 @@ footer {
     margin: 3rem 0 0;
     font-size: 1.2rem;
     font-family: var(--fuenteLogoLink);
+    /* PREGUNTAR SI IVA ESTA FUENTE ACA EN EL PARRAFO */
 }
 
 footer ul {
@@ -364,103 +225,8 @@ footer ul li {
 }
 
 /* TAMAÑO PARA TABLET */
-@media (min-width: 768px) {
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 2rem 0 3rem;
-        height: 7rem;
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        /* muestro la lista del navbar */
-        display: flex;
-    }
-
-    .titulo-shows {
-        font-size: 3.2rem;
-    }
-
-    .contenedor-cartas {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    /* CONTACTO */
-
-    .titulo-contacto {
-        font-size: 3rem;
-    }
-
-    .btn-contacto {
-        font-size: 2rem;
-    }
-
-    .sectionContacto textarea {
-        height: 19rem;
-    }
-
-    footer {
-        font-size: 1.5rem;
-    }
-}
+@media (min-width: 768px) {}
 
 /* TAMAÑO PARA DESKTOP */
-@media (min-width: 1044px) {
+@media (min-width: 1044px) {}
 
-    section {
-        width: 80%;
-    }
-
-    .contenedor-cartas {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-
-    .carta {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .carta:nth-child(1) {
-        grid-column: span 2;
-    }
-
-    .carta img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .carta:nth-child(2),
-    .carta:nth-child(3),
-    .carta:nth-child(4),
-    .carta:nth-child(6) {
-        grid-column: span 1;
-    }
-
-    .carta:nth-child(5) {
-        grid-column: span 2;
-    }
-
-    .playlist {
-        width: 60%;
-
-    }
-
-    /* CONTACTO */
-    .sectionContacto {
-        width: 60%;
-    }
-
-    .titulo-contacto {
-        text-align: center;
-    }
-}
