@@ -67,24 +67,25 @@ nav {
     margin-right: 1rem;
 }
 
-.navLinks{
+.navLinks {
     display: flex;
     gap: 5rem;
 }
 
-.navLinks li a{
+.navLinks li a {
     font-size: 2rem;
     transition: 0.3s;
-    &:hover{
+
+    &:hover {
         font-weight: bolder;
     }
 }
 
-#toggler{
+#toggler {
     display: none;
 }
 
-.navLinks{
+.navLinks {
     position: absolute;
     top: 60px;
     background: #000000;
@@ -98,21 +99,22 @@ nav {
     z-index: 10;
 }
 
-.navLinks li:nth-child(1){
+.navLinks li:nth-child(1) {
     padding-top: 20%;
 }
 
-nav label{
+nav label {
     width: 45px;
     height: 30px;
     border: #D9d9d9;
     position: relative;
-    &:hover{
+
+    &:hover {
         cursor: pointer;
     }
 }
 
-nav label div{
+nav label div {
     width: 100%;
     height: 5px;
     background-color: #FFFFFF;
@@ -123,29 +125,33 @@ nav label div{
     transform: scale(1);
 }
 
-nav label div:nth-child(1){
+nav label div:nth-child(1) {
     top: 0;
 }
-nav label div:nth-child(2){
+
+nav label div:nth-child(2) {
     top: 50%;
 }
-nav label div:nth-child(3){
+
+nav label div:nth-child(3) {
     top: 100%;
 }
 
-#toggler:checked ~ header nav .navLinks {
+#toggler:checked~header nav .navLinks {
     height: 100vh;
 }
 
-#toggler:checked + header nav label div:nth-child(1){
+#toggler:checked+header nav label div:nth-child(1) {
     transform: rotate(45deg);
     top: 50%;
 }
-#toggler:checked + header nav label div:nth-child(2){
+
+#toggler:checked+header nav label div:nth-child(2) {
     transform: rotate(-45deg);
     top: 50%;
 }
-#toggler:checked + header nav label div:nth-child(3){
+
+#toggler:checked+header nav label div:nth-child(3) {
     transform: scale(0);
     opacity: 0;
 }
@@ -274,7 +280,7 @@ section {
 }
 
 .contendorcartas {
-    width:90%;
+    width: 90%;
     height: 13rem;
     padding: 0rem;
     gap: 1.5rem;
@@ -306,7 +312,9 @@ section {
     line-height: 1.4rem;
     text-align: left;
 }
-.nom, .roll {
+
+.nom,
+.roll {
     display: block;
     width: 100%;
 }
@@ -413,6 +421,7 @@ section {
 
 .descripcion-evento {
     font-size: 1.2rem;
+    line-height: 1.5em
 }
 
 .datos-evento img {
@@ -433,13 +442,25 @@ section {
 .tiempo {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
     width: 100%;
-    margin: 2rem auto;
-    border-radius: 1rem;
+    gap: 1.5rem;
     padding: 1.5rem;
     font-size: 1.4rem;
+}
+
+.bottom-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 2rem;
+}
+
+.comprar-ticket,
+.comprar-btn {
+    margin: 0 auto;
+    margin: 0 2rem;
 }
 
 .tiempo p {
@@ -451,12 +472,10 @@ section {
     align-items: center;
     gap: 1.5rem;
     width: 100%;
-    padding: 0 3rem;
 }
 
 .comprar-ticket a {
     text-align: center;
-
 }
 
 .comprar-ticket p {
@@ -468,12 +487,14 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: 100%;
+    width: 95%;
+    padding: 1.5rem;
     font-size: 1.4rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .mapa h2 {
-    padding: 0 1.5rem;
     font-size: 2rem;
 }
 
@@ -511,10 +532,11 @@ footer ul li {
 
 /* TAMAÑO PARA TABLET */
 @media (min-width: 768px) {
-    nav label{
+    nav label {
         display: none;
     }
-    .navLinks{
+
+    .navLinks {
         height: auto;
         width: auto;
         flex-direction: row;
@@ -523,11 +545,12 @@ footer ul li {
         gap: 1rem;
         transition: none;
     }
+
     .navLinks li a {
         font-size: 1.2rem;
     }
 
-    .navLinks li:nth-child(1){
+    .navLinks li:nth-child(1) {
         padding-top: 0;
     }
 
@@ -543,11 +566,12 @@ footer ul li {
         width: 100%;
         margin: 0 auto;
     }
-    .contendorcartas{
+
+    .contendorcartas {
         width: 90%;
         height: 15rem;
     }
-    
+
 
     /* CONTACTO */
 
@@ -563,6 +587,46 @@ footer ul li {
         height: 19rem;
     }
 
+    /* EVENTO */
+    .artista {
+        width: 90%;
+    }
+
+    .evento-dato-compra {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem;
+    }
+
+    .tiempo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottom-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        /* Ajusta según necesites */
+    }
+
+    .comprar-ticket p {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .comprar-ticket,
+    .comprar-btn {
+        margin-top: 10px;
+        /* Ajusta el espacio entre los elementos */
+    }
+
+    /* FOOTER */
     footer {
         font-size: 1.5rem;
     }
@@ -619,4 +683,3 @@ footer ul li {
         text-align: center;
     }
 }
-
