@@ -432,7 +432,7 @@ section {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .datos-evento ul li img {
@@ -592,6 +592,14 @@ footer ul li {
         width: 90%;
     }
 
+    .descripcion-evento {
+        font-size: 1.2rem;
+    }
+
+    .datos-evento ul li {
+        font-size: 1.2rem;
+    }
+
     .evento-dato-compra {
         display: flex;
         flex-direction: row;
@@ -625,7 +633,10 @@ footer ul li {
         margin-top: 10px;
         /* Ajusta el espacio entre los elementos */
     }
-
+    .datos-evento img {
+        width: 25px;
+        height: 25px;
+    }
     /* FOOTER */
     footer {
         font-size: 1.5rem;
@@ -681,5 +692,20 @@ footer ul li {
 
     .titulo-contacto {
         text-align: center;
+    }
+
+    /* EVENTO */
+    .descripcion-evento {
+        font-size: 1.5rem;
+    }
+
+    .datos-evento ul li {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .datos-evento img {
+        width: 35px;
+        height: 35px;
     }
 }
