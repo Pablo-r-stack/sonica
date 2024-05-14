@@ -35,9 +35,18 @@ h1 {
     font-size: 3.5rem;
 }
 
+h4 {
+    font-size: 1.4rem;
+    font-weight:600;
+    font-family: var(--fuenteTextos);
+}
+
+p{
+    font-size: 1.2rem;
+
+}
 
 /* VISTA MOVIL */
-
 
 /* HEADER */
 
@@ -168,8 +177,7 @@ body {
     margin-bottom: 3rem;
 }
 
-/* INDEX */
-/* SECTION CARD*/
+/* SECTION CART*/
 .titulo-shows {
     font-size: 3rem;
     margin-top: 1rem;
@@ -182,16 +190,19 @@ section {
     width: 90%;
     background-color: var(--colorContainer);
     margin: 0 auto;
-    border-radius: 1rem;
 }
+
+.preguntas{
+    gap:2.2rem;
+    padding: 1.5rem;
+    
+    }
 
 .contenedor-cartas {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
-    justify-content: center;
 }
 
 .carta {
@@ -223,6 +234,34 @@ section {
     transform: translate(-50%, -50%);
     padding: 1rem;
     font-family: var(--fuenteTextos);
+}
+
+.carta-pregunta{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    background-color:var(--colorPlomo); 
+    color: var(--colorNegro);
+    border-radius: 1.5rem;
+    padding: 0.5rem;
+
+}
+
+.imgpregunta{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    position: relative;
+    padding: 1.5rem;
+    padding-top: 0.5rem;   
+}
+.carta-pregunta img{
+   width: 5rem;
+   padding: 1rem;
+   margin-block-end: auto;
 }
 
 .texto-carta p:nth-child(1) {
@@ -506,8 +545,6 @@ section {
 
 /* FOOTER */
 footer {
-    align-self: flex-end;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -518,6 +555,7 @@ footer {
     margin: 3rem 0 0;
     font-size: 1.2rem;
     font-family: var(--fuenteLogoLink);
+    /* PREGUNTAR SI IVA ESTA FUENTE ACA EN EL PARRAFO */
 }
 
 footer ul {
