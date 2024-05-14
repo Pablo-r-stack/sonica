@@ -37,13 +37,18 @@ h1 {
 
 h4 {
     font-size: 1.4rem;
-    font-weight:600;
+    font-weight: 600;
     font-family: var(--fuenteTextos);
 }
 
-p{
+p {
     font-size: 1.2rem;
 
+}
+
+input {
+    font-weight: bold;
+    color: black;
 }
 
 /* VISTA MOVIL */
@@ -192,15 +197,15 @@ section {
     margin: 0 auto;
 }
 
-.preguntas{
-    gap:2.2rem;
+.preguntas {
+    gap: 2.2rem;
     padding: 1.5rem;
-    
-    }
+}
 
 .contenedor-cartas {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     margin: 0 auto;
 }
@@ -222,7 +227,6 @@ section {
     border-radius: 1rem;
     width: 325px;
     height: 150px;
-
 }
 
 .carta .texto-carta {
@@ -236,32 +240,32 @@ section {
     font-family: var(--fuenteTextos);
 }
 
-.carta-pregunta{
+.carta-pregunta {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    background-color:var(--colorPlomo); 
+    background-color: var(--colorPlomo);
     color: var(--colorNegro);
     border-radius: 1.5rem;
     padding: 0.5rem;
-
 }
 
-.imgpregunta{
+.imgpregunta {
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: left;
     position: relative;
     padding: 1.5rem;
-    padding-top: 0.5rem;   
+    padding-top: 0.5rem;
 }
-.carta-pregunta img{
-   width: 5rem;
-   padding: 1rem;
-   margin-block-end: auto;
+
+.carta-pregunta img {
+    width: 5rem;
+    padding: 1rem;
+    margin-block-end: auto;
 }
 
 .texto-carta p:nth-child(1) {
@@ -523,7 +527,6 @@ footer ul li {
         padding-top: 0;
     }
 
-
     .titulo-shows {
         font-size: 3.2rem;
     }
@@ -534,6 +537,11 @@ footer ul li {
         flex-wrap: wrap;
         width: 100%;
         margin: 0 auto;
+    }
+
+    .contendorcartas {
+        width: 90%;
+        height: 15rem;
     }
 
     /* CONTACTO */
@@ -596,10 +604,12 @@ footer ul li {
         margin-top: 10px;
         /* Ajusta el espacio entre los elementos */
     }
+
     .datos-evento img {
         width: 25px;
         height: 25px;
     }
+
     /* FOOTER */
     footer {
         font-size: 1.5rem;
