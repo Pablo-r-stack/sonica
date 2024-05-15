@@ -1,0 +1,58 @@
+{
+    "bandas":[
+    {
+        "foto" : "img/foto/losnoche.png",
+        "nombre": "Los Nocheros",
+        "fecha" : "27 de Noviembre",
+        "hora": "21:00",
+        "lugar" : "Cosquin-Cba",
+        "descripcion": "",
+        "mapa": ""
+    },
+    {
+        "foto" : "img/foto/banda.jpg",
+        "nombre": "Banda XXI",
+        "fecha" : "15 de Marzo",
+        "hora": "23:30",
+        "lugar" : "Alta Gracia-Cba",
+        "descripcion": "",
+        "mapa": ""
+    },
+    {
+        "foto" : "img/foto/jeancarlos.jpg",
+        "nombre": "Jean Carlos",
+        "fecha" : "30 de Enero",
+        "hora": "22:hs",
+        "lugar" : "Santa Rosa-Cba",
+        "descripcion": "",
+        "mapa": ""
+    },
+    {
+        "foto" : "img/foto/qlokura.jpg",
+        "nombre": "Que Lokura",
+        "fecha" : "13 de Diciembre",
+        "hora": "21hs",
+        "lugar" : "Rio Cuarto-Cba",
+        "descripcion": "",
+        "mapa": ""
+    },
+    {
+        "foto" : "img/foto/konga.jpg",
+        "nombre": "La Konga",
+        "fecha" : "19 de Abril",
+        "hora": "20:30",
+        "lugar" : "Teatro Gran Rex-CABA",
+        "descripcion": "Abril será un mes para recordar: la agrupación argentina de cuarteto más convocante de Argentina hará bailar el Movistar Arena al ritmo de todos los clásicos de sus más de dos décadas de éxito",
+        "mapa": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3284.38831664099!2d-58.447380326987556!3d-34.594340979744594!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5eb6fb40a93%3A0x1fcab11b62b55896!2sMovistar%20Arena!5e0!3m2!1ses-419!2sar!4v1714514107254!5m2!1ses-419!2sar"
+    },
+    {
+        "foto" : "img/foto/Las-Pastillas.jpg",
+        "nombre": "Las Pastillas del Abuelo",
+        "fecha" : "",
+        "hora": "",
+        "lugar" : "",
+        "descripcion": "",
+        "mapa": ""
+    }
+]
+}
