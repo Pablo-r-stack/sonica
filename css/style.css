@@ -35,6 +35,8 @@ h1 {
     font-size: 3.5rem;
 }
 
+h2{font-size: 2rem;}
+
 h4 {
     font-size: 1.4rem;
     font-weight: 600;
@@ -247,6 +249,14 @@ section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    
+}
+.contenedor-cartas-soporte h2{
+    padding: 0.5rem;
+    display: flex;
+    text-align: center;
+    margin: auto;
+     
     
 }
 .carta-pregunta{
