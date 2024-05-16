@@ -12,6 +12,7 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 
@@ -55,7 +56,20 @@
             <h1 class="titulo-shows">Ultimos Shows</h1>
 
             <div class="contenedor-cartas">
-                <div class="carta">
+
+                <template id="template-carta">
+                    
+                    <div class="carta">
+                        <img src="" alt="">
+                        <div class="texto-carta">
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </template> 
+
+                <!-- <div class="carta">
                     <img src="img/foto/losnoche.png" alt="">
                     <div class="texto-carta">
                         <p>Los Nocheros</p>
@@ -100,8 +114,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="carta">
                     <img src="img/foto/Las-Pastillas.jpg" alt="">
                     <div class="texto-carta">
@@ -110,7 +122,7 @@
                         <p>Rio Cuarto-Cba</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <!-- SECCION DE LA PLAYLIST -->
@@ -133,7 +145,7 @@
             <li><a href="/soporte.html">Soporte</a></li>
         </ul>
     </footer>
-
+    <script src="Js/index.js"></script>
 </body>
 
 </html>
