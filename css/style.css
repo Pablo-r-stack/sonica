@@ -35,6 +35,8 @@ h1 {
     font-size: 3.5rem;
 }
 
+h2{font-size: 2rem;}
+
 h4 {
     font-size: 1.4rem;
     font-weight: 600;
@@ -50,6 +52,7 @@ input {
     font-weight: bold;
     color: black;
 }
+
 
 /* VISTA MOVIL */
 
@@ -196,11 +199,11 @@ section {
     background-color: var(--colorContainer);
     margin: 0 auto;
 }
-
-.preguntas {
-    gap: 2.2rem;
+.preguntas{
+    gap:2.2rem;
     padding: 1.5rem;
-}
+    
+    }
 
 .contenedor-cartas {
     display: flex;
@@ -240,26 +243,46 @@ section {
     font-family: var(--fuenteTextos);
 }
 
-.carta-pregunta {
+
+/* SOPORTE*/
+
+.contenedor-cartas-soporte{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.contenedor-cartas-soporte h2{
+    padding: 0.5rem;
+    display: flex;
+    text-align: center;
+    margin: auto;
+     
+    
+}
+.carta-pregunta{
+
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    background-color: var(--colorPlomo);
+    background-color:var(--colorPlomo); 
     color: var(--colorNegro);
     border-radius: 1.5rem;
     padding: 0.5rem;
+
 }
 
 .imgpregunta {
+
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: left;
     position: relative;
     padding: 1.5rem;
-    padding-top: 0.5rem;
+    padding-top: 0.5rem;   
 }
 
 .carta-pregunta img {
@@ -710,6 +733,25 @@ footer ul li {
     footer {
         font-size: 1.5rem;
     }
+
+    /* SOPORTE*/
+    .carta-pregunta{
+        margin-inline: 10rem;
+        padding: 2.5rem;
+        gap:2.5rem;
+    
+    }
+    
+    .imgpregunta p{
+        font-size: small;
+    }
+    .imgpregunta h4{
+        font-size: medium;
+    }
+    .carta-pregunta img{
+       width: 7rem;
+            
+    }
 }
 
 /* TAMAÑO PARA DESKTOP */
@@ -783,4 +825,41 @@ footer ul li {
         width: 35px;
         height: 35px;
     }
+
+ /* SOPORTE*/
+ .preguntas {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+}
+
+.contenedor-cartas-soporte {
+    width: 100%;             
+    max-width: 80rem;        
+    margin: 20px;            
+    padding: 20px;           
+    
+}
+ .carta-pregunta{
+    
+    padding: 4rem;
+    gap:2.5rem;
+    width: 95%;             
+    max-width: 800px;        
+    margin: 20px;            
+             
+    
+}
+
+.imgpregunta {
+    font-size: medium;
+}
+.imgpregunta h4{
+    font-size: large;
+}
+.carta-pregunta img{
+   width: 10rem;
+        
+}
+    
 }
