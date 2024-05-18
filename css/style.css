@@ -4,8 +4,8 @@
 :root {
     font-size: 10px;
     background: linear-gradient(to bottom,
-            #03010C 10%,
-            #120113 10%,
+            #03010C 25%,
+            #120113 30%,
             #38020C 75%,
             #05020D 100%);
 
@@ -46,8 +46,7 @@ h4 {
 }
 
 p {
-    font-size: 1.2rem;
-
+    font-size: 2rem;
 }
 
 input {
@@ -137,7 +136,7 @@ header {
 }
 
 nav label {
-    width: 45px;
+    width: 40px;
     height: 30px;
     border: #D9d9d9;
     position: relative;
@@ -203,15 +202,14 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 70%;
+    width: 100%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: var(--fuenteLogoLink);
-    text-shadow: 0px 0px 15px rgba(60, 7, 252, 0.9);
-    opacity: 0.6;
-    filter: drop-shadow(2px 2px);
+    filter: drop-shadow(2px 2px rgba(0, 0, 0, 1));
 }
 
 .shadow-banner {
@@ -643,9 +641,11 @@ footer {
     font-family: var(--fuenteLogoLink);
     /* PREGUNTAR SI IVA ESTA FUENTE ACA EN EL PARRAFO */
 }
-footer p{
+
+footer p {
     font-size: 1.5rem;
 }
+
 footer ul {
     display: flex;
     list-style: none;
@@ -658,35 +658,11 @@ footer ul li {
 
 /* TAMAÑO PARA TABLET */
 @media (min-width: 768px) {
-    nav label {
-        display: none;
-    }
 
-    .logo p {
-        font-size: 2.5rem;
-    }
-
-    .navLinks {
-        height: auto;
-        width: auto;
-        flex-direction: row;
-        background: none;
-        position: inherit;
-        gap: 1.5rem;
-        transition: none;
-    }
-
-    .navLinks li a {
-        font-size: 1.3rem;
-    }
-
-    .navLinks li:nth-child(1) {
-        padding-top: 0;
-    }
 
     /* BANNER */
     .parrafo-banner {
-        font-size: 10rem;
+        font-size: 6rem;
     }
 
     .titulo-shows {
@@ -806,9 +782,10 @@ footer ul li {
     }
 
     /* FOOTER */
-    footer p{
+    footer p {
         font-size: 1.7rem;
     }
+
     footer {
         font-size: 1.7rem;
     }
@@ -837,6 +814,31 @@ footer ul li {
 
 /* TAMAÑO PARA DESKTOP */
 @media (min-width: 1044px) {
+    nav label {
+        display: none;
+    }
+
+    .logo p {
+        font-size: 2.5rem;
+    }
+
+    .navLinks {
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        background: none;
+        position: inherit;
+        gap: 1.5rem;
+        transition: none;
+    }
+
+    .navLinks li a {
+        font-size: 1.3rem;
+    }
+
+    .navLinks li:nth-child(1) {
+        padding-top: 0;
+    }
 
     .navLinks {
         gap: 2rem;
@@ -870,12 +872,11 @@ footer ul li {
     }
 
     .parrafo-banner {
-        top: 80%;
-        font-size: 18rem;
+        font-size: 8rem;
     }
 
     .logo p {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 
     /* INDEX */
