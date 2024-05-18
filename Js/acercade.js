@@ -1,7 +1,7 @@
 import { colaborador } from "../data/colaborador.js";
 
 //VARIABLES
-const contenedor = document.querySelector(".contenedor");
+const contenedor = document.querySelector(".container__cards");
 //EVENTOS
 document.addEventListener('DOMContentLoaded', function () {
     cargarTarjeta(colaborador);
@@ -14,21 +14,20 @@ function cargarTarjeta(nosotros) {
     if (nosotros.length > 0) {
         nosotros.forEach(function (item) {
             codigo += `
-        <div class="contendorcartas">
-        <div class="cartadeImg">
-            <img class="imagecara" src="${item.imagecara}" alt="foto">
-            <div class="cartadeInfo">
-                <div>
-                    <h1 class="nom">${item.nom}</h1>
-                </div>
-                <div>
-                    <h2 class="roll">${item.roll}</h2>
-                    <a href="${item.linked}"><img class="iconolinkedin" src="img/icons/LinkedInIcon.png" alt="linkedin"></a>
-                    <a href="${item.github}"><img class="iconogithub" src="img/icons/GitHubIcon.png" alt="github"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="card">
+                    <div class="cover">
+                        <img src="${item.imagecara}" alt="">
+                        <div class="img__back"></div>
+                    </div>
+                    <div class="description">
+                        <h2>${item.nom}</h2>
+                        <p>${item.roll}</p>
+                        <div>
+                        <a href="${item.linked}"><img class="iconolinkedin" src="img/icons/LinkedInIcon.png" alt="linkedin"></a>
+                        <a href="${item.github}"><img class="iconogithub" src="img/icons/GitHubIcon.png" alt="github"></a>
+                        </div>
+                    </div>
+                </div> 
         `;
         });
     }else{
@@ -38,3 +37,6 @@ function cargarTarjeta(nosotros) {
     }
     contenedor.innerHTML += codigo;
 }
+
+
+
