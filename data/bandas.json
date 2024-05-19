@@ -2,38 +2,50 @@
     "shows": [
         {
             "nombre": "Los Nocheros",
-            "fecha": "27 de Noviembre",
+            "fecha": "2024-05-25",
             "lugar": "Cosquin-Cba",
+            "hora": "15:00",
+            "direccion": "Av. Corrientes 857",
             "imagen": "img/foto/losnoche.png"
         },
         {
             "nombre": "Banda XXI",
-            "fecha": "14 de diciembre",
+            "fecha": "2024-07-03",
             "lugar": "Rio 4",
+            "hora": "22:30",
+            "direccion": "Presidente Peron 1830",
             "imagen": "img/foto/banda.jpg"
         },
         {
             "nombre": "Jean Carlos",
-            "fecha": "1 de enero",
+            "fecha": "2025-01-18",
             "lugar": "Cordoba",
+            "hora": "00:00",
+            "direccion": "Hipolito Yrigoyen 950",
             "imagen": "img/foto/jeancarlos.jpg"
         },
         {
             "nombre": "La Konga",
-            "fecha": "11 de febrero",
+            "fecha": "2024-09-23",
             "lugar": "Mendoza",
+            "hora": "23:00",
+            "direccion": "Juan Manuel Belgrano 333",
             "imagen": "img/foto/konga.jpg"
         },
         {
             "nombre": "Las Pastillas del Abuelo",
-            "fecha": "24 de marzo",
+            "fecha": "2024-08-08",
             "lugar": "Bs As",
+            "hora": "20:00",
+            "direccion": "Avellaneda 3020",
             "imagen": "img/foto/Las-Pastillas.jpg"
         },
         {
             "nombre": "Q`Lokura",
-            "fecha": "17 de abril",
+            "fecha": "2024-10-29",
             "lugar": "Santa Fe",
+            "hora": "21:00",
+            "direccion": "Constitucion 870",
             "imagen": "img/foto/qlokura.jpg"
         }
     ]
