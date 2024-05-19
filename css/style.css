@@ -235,7 +235,7 @@ body {
     box-shadow: 0 50px 50px 5px black;
 }
 
-/* SECTION CART*/
+/* SECTION CARTA*/
 .titulo-shows {
     font-size: 3rem;
     margin-top: 1rem;
@@ -271,6 +271,9 @@ section {
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .carta img {
@@ -285,13 +288,18 @@ section {
 
 .carta .texto-carta {
     position: absolute;
-    top: 75%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    top: 60%;
     left: 50%;
     width: 90%;
     text-align: center;
     transform: translate(-50%, -50%);
-    padding: 1rem;
+    padding: 1rem 6rem;
     font-family: var(--fuenteTextos);
+    font-weight: 600;
+    filter: drop-shadow(1px 1px 2px var(--colorNegro));
 }
 
 /* SOPORTE*/
