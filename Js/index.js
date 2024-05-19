@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const datos = await pedirDatos();
         if (datos.shows && datos.shows.length > 0) {
             datos.shows.forEach(show => {
-                const nuevaCarta = crearCartaBanda(show.nombre, show.fecha, show.lugar, show.imagen);
+                const nuevaCarta = crearCartaBanda(show.nombre, show.fecha, show.lugar, show.hora, show.direccion, show.imagen);
                 contenedorCartas.appendChild(nuevaCarta);
             });
         } else {
@@ -32,17 +32,15 @@ async function pedirDatos() {
 }
 
 // Función para crear el div de la carta de la banda
-function crearCartaBanda(nombre, fecha, lugar, imagenSrc) {
+function crearCartaBanda(nombre, fecha, lugar, hora, direccion, imagenSrc) {
     const nuevaCarta = templateCarta.cloneNode(true);
     nuevaCarta.querySelector('img').src = imagenSrc;
     nuevaCarta.querySelector('.texto-carta p:nth-child(1)').textContent = nombre;
     nuevaCarta.querySelector('.texto-carta p:nth-child(2)').textContent = fecha;
     nuevaCarta.querySelector('.texto-carta p:nth-child(3)').textContent = lugar;
 
-    // Agregar evento de clic para redirigir a la página del evento
     nuevaCarta.querySelector('.carta').addEventListener('click', () => {
-        // Usar local storage para pasar datos a la página del evento
-        localStorage.setItem('selectedShow', JSON.stringify({ nombre, fecha, lugar, imagenSrc }));
+        localStorage.setItem('selectedShow', JSON.stringify({ nombre, fecha, lugar, hora, direccion, imagenSrc }));
         window.location.href = '/evento.html';
     });
 
