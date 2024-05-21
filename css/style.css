@@ -27,7 +27,9 @@
 * {
     font-family: var(--fuenteTextos);
 }
-
+main{
+    min-height: 60vh;
+}
 a {
     font-family: var(--fuenteLogoLink);
 }
@@ -594,11 +596,6 @@ textarea {
     &:active{
         filter: drop-shadow(0 0 0 var(--colorNegro));
     }
-}
-
-/* Login */
-.login {
-    height: 70vh;
 }
 
 /* Registro */
