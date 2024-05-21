@@ -1,5 +1,35 @@
+import { preguntas } from "../data/preguntas.js";
+
+//VARIABLES
+const cartaPregunta = document.querySelector(".contenedor-cartas-soporte");
+//EVENTOS
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  preguntas.forEach((preg)=>{
+    cargarPreguntas(preg);
+  })
+})
 
 
+function cargarPreguntas(pregunta) {
+    const codigo = `
+    <div class="carta-pregunta">
+          <img id="icono" src="${pregunta.icono}" alt="icono" />
+          <div class="imgpregunta">
+            <h4>${pregunta.pregunta}</h4>
+            <br>
+            <div>
+              <p>
+              ${pregunta.respuesta}
+              </p>
+            </div>
+          </div>
+        </div>
+ `
+ cartaPregunta.innerHTML += codigo;
+
+}
+/*
 const iconoCompra = "img/icons/iconocompra.png"; 
 const pregunta1 = "Como comprar en Sónica?";
 const respuesta1 = "Podes comprar tus entradas una vez logueado con tu cuenta. Hace click en la ventana y compra las entradas.";
@@ -36,3 +66,4 @@ function agregarPregunta(iconoSrc, titulo, contenido) {
   agregarPregunta(iconoEntrega, pregunta2, respuesta2);
   agregarPregunta(iconoPoliticas, pregunta3, respuesta3);
   agregarPregunta(iconoReembolso, pregunta4, respuesta4);
+*/
