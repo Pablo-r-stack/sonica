@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const datos = await pedirDatos();
         if (datos.shows && datos.shows.length > 0) {
             datos.shows.forEach(show => {
-                const nuevaCarta = crearCartaBanda(show.nombre, show.fecha, show.lugar, show.hora, show.direccion, show.imagen);
+                const nuevaCarta = crearCartaBanda(show.nombre, show.fecha, show.lugar, show.hora, show.direccion, show.mapa, show.imagen);
                 contenedorCartas.appendChild(nuevaCarta);
             });
         } else {
@@ -32,7 +32,7 @@ async function pedirDatos() {
 }
 
 // Función para crear el div de la carta de la banda
-function crearCartaBanda(nombre, fecha, lugar, hora, direccion, imagenSrc) {
+function crearCartaBanda(nombre, fecha, lugar, hora, direccion, mapa, imagenSrc) {
     const nuevaCarta = templateCarta.cloneNode(true);
     nuevaCarta.querySelector('img').src = imagenSrc;
     nuevaCarta.querySelector('.texto-carta p:nth-child(1)').textContent = nombre;
@@ -40,7 +40,7 @@ function crearCartaBanda(nombre, fecha, lugar, hora, direccion, imagenSrc) {
     nuevaCarta.querySelector('.texto-carta p:nth-child(3)').textContent = lugar;
 
     nuevaCarta.querySelector('.carta').addEventListener('click', () => {
-        localStorage.setItem('selectedShow', JSON.stringify({ nombre, fecha, lugar, hora, direccion, imagenSrc }));
+        localStorage.setItem('selectedShow', JSON.stringify({ nombre, fecha, lugar, hora, direccion, mapa, imagenSrc }));
         window.location.href = '/evento.html';
     });
 
