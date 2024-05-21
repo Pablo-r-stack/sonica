@@ -51,24 +51,23 @@
     <main>
         <!-- Sección de Contacto -->
         <section class="sectionContacto">
-
             <div>
                 <form class="formContacto" id="form" name="form" action="" method="POST">
                     <label for="nombre">Nombre y Apellido:</label>
-                    <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" placeholder="E-mail">
+                    <input type="email" id="email" name="email" placeholder="E-mail">
                     <label for="telefono">Telefono:</label>
-                    <input type="number" name="telefono" placeholder="Telefono">
+                    <input type="number" id="telefono" name="telefono" placeholder="Telefono">
                     <label for="asunto">Asunto:</label>
-                    <input type="text" name="asunto" placeholder="Asunto">
+                    <input type="text" id="asunto" name="asunto" placeholder="Asunto">
                     <label for="mensaje">Mensaje:</label>
                     <textarea rows="5" cols="40" id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
                     <button class="btn-contacto" type="submit">Enviar</button>
                 </form>
-
             </div>
-
+            <div id="mensajeValidacion">
+            </div>
         </section>
     </main>
     <!-- FOOTER -->
@@ -80,6 +79,7 @@
             <li><a href="/soporte.html">Soporte</a></li>
         </ul>
     </footer>
+    <script src="Js/validacion.js"></script>
 </body>
 
 </html>

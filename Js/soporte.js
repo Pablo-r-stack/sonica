@@ -1,5 +1,3 @@
-
-
 const iconoCompra = "img/icons/iconocompra.png"; 
 const pregunta1 = "Como comprar en Sónica?";
 const respuesta1 = "Podes comprar tus entradas una vez logueado con tu cuenta. Hace click en la ventana y compra las entradas.";

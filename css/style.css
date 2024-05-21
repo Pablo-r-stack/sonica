@@ -27,7 +27,9 @@
 * {
     font-family: var(--fuenteTextos);
 }
-
+main{
+    min-height: 60vh;
+}
 a {
     font-family: var(--fuenteLogoLink);
 }
@@ -271,7 +273,8 @@ section {
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    &:hover{
+
+    &:hover {
         cursor: pointer;
     }
 }
@@ -510,67 +513,6 @@ section {
     background: #83277b;
 }
 
-/* .contendorcartas {
-    width: 80%;
-    height: 5.13rem;
-    padding: 0rem;
-    gap: 1.5rem;
-    margin-bottom: 8rem;
-    margin-left: auto;
-    margin-right: auto;
-} */
-
-/* .cartadeImg {
-    width: 100%;
-    height: 200%;
-    padding: 1rem;
-    gap: 4rem;
-    border-radius: 1.5rem;
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.cartadeInfo {
-    width: 11rem;
-    height: 9.2rem;
-    gap: 1rem;
-} */
-
-
-
-/* .imagecara {
-    width: 9.2rem;
-    height: 9.2rem;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-} */
-
-/* .nom {
-    font-family: Raleway;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.4rem;
-    text-align: left;
-} */
-
-/* .roll {
-    font-family: Raleway;
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.4rem;
-    text-align: left;
-} */
-
-/* .nom,
-.roll {
-    display: block;
-    width: 100%;
-} */
-
 .iconolinkedin,
 .iconogithub {
     width: 3rem;
@@ -582,6 +524,7 @@ section {
 
 .sectionContacto {
     width: 87%;
+    position: relative;
 }
 
 .titulo-contacto {
@@ -598,6 +541,25 @@ section {
     margin-bottom: 2.5rem;
 }
 
+.formContacto p{
+    font-size: 1rem;
+}
+
+#mensajeValidacion {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    background-color: red;
+    padding: 1.5rem 0;
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 .formContacto input {
     margin-bottom: 2rem;
     height: 3rem;
@@ -611,6 +573,10 @@ section {
     height: 7.5rem;
 }
 
+textarea {
+    color: var(--colorNegro);
+}
+
 .btn-contacto {
     font-size: 1.5rem;
     margin-top: 1.5rem;
@@ -620,16 +586,16 @@ section {
     border-radius: 0.5rem;
     font-family: var(--fuenteLogoLink);
     background-color: var(--colorAzul);
-    transition: transform 0.4s ease;
+    filter: drop-shadow(0 8px 10px var(--colorNegro));
+    transition: all 0.4s ease;
 
     &:hover {
-        transform: scale(1.1);
+        filter: drop-shadow(0 20px 13px var(--colorNegro));
+            cursor: pointer;
     }
-}
-
-/* Login */
-.login {
-    height: 70vh;
+    &:active{
+        filter: drop-shadow(0 0 0 var(--colorNegro));
+    }
 }
 
 /* Registro */
@@ -776,7 +742,6 @@ footer {
     margin: 3rem 0 0;
     font-size: 1.5rem;
     font-family: var(--fuenteLogoLink);
-    /* PREGUNTAR SI IVA ESTA FUENTE ACA EN EL PARRAFO */
 }
 
 footer p {
@@ -916,6 +881,14 @@ footer ul li {
     .datos-evento img {
         width: 25px;
         height: 25px;
+    }
+
+    .formContacto{
+        font-size: 1.5rem;
+    }
+
+    .formContacto p{
+        font-size: 1.3rem;
     }
 
     /* FOOTER */

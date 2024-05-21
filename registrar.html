@@ -53,22 +53,22 @@
             <form class="formContacto" action="">
               
                     <label for="email">Email</label>
-                    <input type="email" required placeholder="Ej: sonica@sonica.com">
+                    <input type="email" id="email"  placeholder="Ej: sonica@sonica.com">
 
                     <label for="password">Contraseña</label>
-                    <input type="password" required placeholder="Contraseña">
+                    <input type="password" id="password" placeholder="Contraseña">
 
-                    <label for="password">Repetir Contraseña</label>
-                    <input type="password" required placeholder="Repite tu contraseña">
+                    <label for="password2">Repetir Contraseña</label>
+                    <input type="password" id="password2"  placeholder="Repite tu contraseña">
 
                     <label for="nombre">Nombre</label>
-                    <input type="text" required placeholder="Nombre">
+                    <input type="text" id="nombre"  placeholder="Nombre">
 
                     <label for="apellido">Apellido</label>
-                    <input type="text" required placeholder="Apellido">
+                    <input type="text" id="apellido"  placeholder="Apellido">
                 <div class="contenedorRegistro">
                     <label for="pais">Pais</label>
-                    <select name="pais" id="pais" required>
+                    <select name="pais" id="pais" >
                         <option value="">Seleccione Pais</option>
                         <option value="AR">Argentina</option>
                         <option value="BR">Brasil</option>
@@ -77,18 +77,20 @@
                 </div>
                 <div class="contenedorRegistro">
                     <label for="documento">Documento</label>
-                    <select name="documento" id="documento" required>
+                    <select name="documento" id="documento" >
                         <option value="">Tipo</option>
-                        <option value="">DNI</option>
-                        <option value="">Pasaporte</option>
-                        <option value="">Otro</option>
+                        <option value="dni">DNI</option>
+                        <option value="passaporte">Pasaporte</option>
+                        <option value="otro">Otro</option>
                     </select>
-                    <input type="number" required placeholder="Numero">
+                    <input id="nroDocumento" type="number"  placeholder="Numero">
                 </div>
+                <p>todos los campos son obligatorios</p>
 
                 <button class="btn-contacto" type="submit">Registrar</button>
-                <p>todos los campos son obligatorios</p>
             </form>
+            <div id="mensajeValidacion">
+            </div>
         </section>
     </main>
     <!-- FOOTER -->
@@ -100,6 +102,7 @@
             <li><a href="/soporte.html">Soporte</a></li>
         </ul>
     </footer>
+    <script src="Js/validacion.js"></script>
 </body>
 
 </html>
