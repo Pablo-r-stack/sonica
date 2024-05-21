@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.fecha-evento').textContent = `Fecha: ${selectedShow.fecha}`;
         document.querySelector('.hora-evento').textContent = `Hora: ${selectedShow.hora}`;
         document.querySelector('.direccion-evento').textContent = `Direccion: ${selectedShow.direccion}`;
+        
+        document.querySelector('.mapa iframe').src = selectedShow.mapa;
 
         // Define la fecha y hora del evento seleccionado
         const fechaHoraString = `${selectedShow.fecha} ${selectedShow.hora}`;
