@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(selectedShow); // Agrega esta línea para verificar los datos del evento seleccionado
         document.querySelector('.banda-evento').src = selectedShow.imagenSrc;
         document.querySelector('.titulo-evento').textContent = selectedShow.nombre;
+        document.querySelector('.descripcion-evento p').textContent = selectedShow.descripcion;
         document.querySelector('.lugar-evento').textContent = `Lugar: ${selectedShow.lugar}`;
         document.querySelector('.fecha-evento').textContent = `Fecha: ${selectedShow.fecha}`;
         document.querySelector('.hora-evento').textContent = `Hora: ${selectedShow.hora}`;

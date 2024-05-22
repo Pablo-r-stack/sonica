@@ -100,7 +100,7 @@ header {
     /* Sombra en la parte inferior */
     position: relative;
     /* Asegura que el header tenga un contexto de apilamiento */
-    z-index: 1;
+    z-index: 2;
     /* Coloca el header por encima de otros elementos si es necesario */
 }
 
@@ -633,8 +633,8 @@ textarea {
     gap: 1.5rem;
 }
 
-.descripcion-evento {
-    font-size: 1.2rem;
+.descripcion-evento p{
+    font-size: 1.5rem;
     line-height: 1.5em
 }
 
