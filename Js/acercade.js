@@ -24,7 +24,7 @@ function cargarTarjeta(nosotros) {
                         <p>${item.roll}</p>
                         <div>
                         <a href="${item.linked}"><img class="iconolinkedin" src="img/icons/LinkedInIcon.png" alt="linkedin"></a>
-                        <a href="${item.github}"><img class="iconogithub" src="img/icons/GitHubIcon.png" alt="github"></a>
+                        <a href="${item.github}"><img class="iconogithub" src="img/icons/github.png" alt="github"></a>
                         </div>
                     </div>
                 </div> 

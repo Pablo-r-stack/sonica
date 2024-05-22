@@ -27,9 +27,11 @@
 * {
     font-family: var(--fuenteTextos);
 }
-main{
+
+main {
     min-height: 60vh;
 }
+
 a {
     font-family: var(--fuenteLogoLink);
 }
@@ -390,19 +392,19 @@ section {
     flex-wrap: wrap;
     align-items: center;
     width: 90%;
-    margin: auto;
-    margin-top: 100px;
-    background: var(--colorContainer);
+    margin: 0 auto 5rem;
+
+
 }
 
 .card {
-    width: 300px;
+    width: 290px;
     margin: 10px;
     transition: all 300ms;
-}
 
-.card:hover {
-    width: 350px;
+    &:hover {
+        width: 290px;
+    }
 }
 
 .card .cover {
@@ -440,20 +442,21 @@ section {
 }
 
 .card:nth-of-type(1) .img__back {
-    background-image: url(../img/foto/fondo/fondo.jpeg);
+    background: linear-gradient(to right, #807e7e, #1d1c1c);
 }
 
 .card:nth-of-type(2) .img__back {
-    background-image: url(../img/foto/fondo/fondo.jpeg);
+    background: linear-gradient(to right, #807e7e, #1d1c1c);
 }
 
 .card:nth-of-type(3) .img__back {
-    background-image: url(../img/foto/fondo/fondo.jpeg);
+    background: linear-gradient(to right, #807e7e, #1d1c1c);
 }
 
 .card:nth-of-type(4) .img__back {
-    background-image: url(../img/foto/fondo/fondo.jpeg);
+    background: linear-gradient(to right, #807e7e, #1d1c1c);
 }
+
 
 .card:hover .img__back {
     bottom: -40px;
@@ -480,10 +483,6 @@ section {
 }
 
 
-.card:hover .description {
-    padding: 40px;
-}
-
 .card .description h2 {
     margin-top: 1rem;
     font-weight: bold;
@@ -497,27 +496,16 @@ section {
     font-size: 1.7rem;
 }
 
-.card .description input {
-    padding: 10px 40px;
-    margin-top: 20px;
-    border: none;
-    background: #A6359D;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 300ms;
-}
-
-.card .description input:hover {
-    background: #83277b;
-}
 
 .iconolinkedin,
 .iconogithub {
     width: 3rem;
     height: auto;
+    transition: transform 0.4s ease;
 
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 /* CONTACTO */
@@ -541,7 +529,7 @@ section {
     margin-bottom: 2.5rem;
 }
 
-.formContacto p{
+.formContacto p {
     font-size: 1rem;
 }
 
@@ -591,9 +579,10 @@ textarea {
 
     &:hover {
         filter: drop-shadow(0 20px 13px var(--colorNegro));
-            cursor: pointer;
+        cursor: pointer;
     }
-    &:active{
+
+    &:active {
         filter: drop-shadow(0 0 0 var(--colorNegro));
     }
 }
@@ -756,6 +745,11 @@ footer ul {
 footer ul li {
     margin-right: 1.5rem;
     margin-top: 1rem;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 /* TAMAÑO PARA TABLET */
@@ -883,11 +877,11 @@ footer ul li {
         height: 25px;
     }
 
-    .formContacto{
+    .formContacto {
         font-size: 1.5rem;
     }
 
-    .formContacto p{
+    .formContacto p {
         font-size: 1.3rem;
     }
 
@@ -1031,10 +1025,6 @@ footer ul li {
     }
 
     /* ACERCA DE */
-    .imagecara {
-        width: 20%;
-        height: 100%;
-    }
 
 
     /* CONTACTO */
