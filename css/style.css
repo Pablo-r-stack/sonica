@@ -603,6 +603,17 @@ textarea {
     margin-bottom: 2rem;
     width: 100%;
 }
+.terminos{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.terminos input, .terminos label{
+    margin: 0.3rem;
+}
+
+
 
 /* EVENTO */
 .banda-evento {
