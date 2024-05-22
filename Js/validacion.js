@@ -1,6 +1,7 @@
 const formulario = document.querySelector('form');
 const campos = formulario.querySelectorAll('input, textarea, select');
 const msgValidacion = document.querySelector('#mensajeValidacion')
+const terminos = formulario.querySelector('#tyc');
 //eventos
 campos.forEach((campo) => {
     campo.addEventListener('keydown', (e) => {
@@ -21,12 +22,21 @@ campos.forEach((campo) => {
             borrarMensaje(campo);
         })
     }
+    if(campo.type === 'checkbox'){
+        campo.addEventListener('click', ()=>{
+            borrarMensaje(campo);
+        })
+    }
 })
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
     if (validarCampos(campos)) {
-        enviarDatos(campos);
+        if(terminos && !terminos.checked){
+             agregarMensaje('Debes aceptar los terminos y condiciones');
+        }else{
+            enviarDatos(campos);
+        }
     }
 })
 
@@ -42,6 +52,9 @@ const validarCampos = (campos) => {
             valido = false;
         }
     })
+    if (!valido) {
+        agregarMensaje('Todavía hay campos vacíos');
+    }
     if (contrasena && contrasena2) {
         if (contrasena.value !== contrasena2.value) {
             contrasena2.style.border = '2px solid red';
@@ -49,14 +62,12 @@ const validarCampos = (campos) => {
             agregarMensaje('Las contraseñas no coinciden');
         }
     }
-    if (!valido) {
-        agregarMensaje('Todavía hay campos vacíos');
-    }
     return valido;
 }
 
 //mensajes de estado en formularios.
 const agregarMensaje = (mensaje) => {
+    borrarMensaje();
     const mensajeError = document.createElement('small');
     mensajeError.classList.add('mensaje-error');
     mensajeError.textContent = `${mensaje}`;
@@ -70,7 +81,9 @@ const borrarMensaje = (campo) => {
         mensajeError.remove();
         msgValidacion.style.visibility = 'hidden';
     }
-    campo.style.border = '';
+    if(campo){
+        campo.style.border = '';
+    }
 }
 
 
