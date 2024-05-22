@@ -1,75 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Soporte</title>
-  </head>
-  <body>
-    <header>
-        <header>
-            <nav>
-                <div>
-                    <img src="#" alt="logo">
-                    <p>Sónica</p>
-                </div>
-                <div>
-                    <ul>
-                        <li>Acerca de</li>
-                        <li>Soporte</li>
-                        <li>Registrar</li>
-                        <li>Iniciar sesion</li>
-                    </ul>
-                </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soporte</title>
+  <!-- Icono para la pestaña del navegador -->
+  <link rel="icon" href="img/logo/wepik-export-202404182339020TpB.png" type="image/png" />
+  <!-- Imagen Informativa al compartir el Link -->
+  <meta property="og:image" content="pagina+imagen" />
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Checkbox menu movil -->
+  <input type="checkbox" id="toggler">
+  <!-- Fin checkbox menu movil -->
+
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="/index.html"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
+          <p>Sonica</p>
+        </a>
+      </div>
+      <!-- Menu Movil -->
+      <label for="toggler">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+      <!-- Fin Menu movil -->
+      <ul class="navLinks">
+        <li><a href="/acercade.html">Acerca de</a> </li>
+        <li><a href="/soporte.html">Soporte</a> </li>
+        <li><a href="/registrar.html">Registrar</a> </li>
+        <li><a href="/login.html">Iniciar sesion</a> </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <div class="shadow-banner">
+    <img class="banner" src="img/banner/banner2.jpg" alt="banner">
+    <h1 class="parrafo-banner">Soporte</h1>
+  </div>
+
+  <main>
+    <!-- SECCION DE PREGUNTAS EN CARTAS -->
     
-            </nav>
-    </header>
-    <img src="#" alt="banner">
-    <main>
-        <section class="como">
-            <img src="#" alt="iconoCompra">
-            <h4>Como Comprar en Sónica?</h4>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim ducimus iure a blanditiis, optio ipsa earum voluptatum voluptatem
-                    labore omnis vero unde sint impedit sequi voluptatibus, aut tempore exercitationem.</p>
-            </div>
-        </section>
 
-        <section class="entrega">
-            <img src="#" alt="iconoentrada">
-            <h4>Métodos de entrega</h4>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim ducimus iure a blanditiis, optio ipsa earum voluptatum voluptatem
-                    labore omnis vero unde sint impedit sequi voluptatibus, aut tempore exercitationem.</p>
-            </div>
-        </section>
+    <div class="preguntas">
 
-        <section class="acceso">
-            <img src="#" alt="iconoPersonas">
-            <h4>Políticas de acceso a nuestros eventos</h4>
+      <section class="contenedor-cartas-soporte">
+        <h2>Preguntas Frecuentes</h2>
+        <template>       
+        <div class="carta-pregunta">
+          <img id="icono" alt="icono" />
+          <div class="imgpregunta">
+            <h4>titulo de la pregunta</h4>
+            <br>
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim ducimus iure a blanditiis, optio ipsa earum voluptatum voluptatem
-                    labore omnis vero unde sint impedit sequi voluptatibus, aut tempore exercitationem.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                 Accusantium iure recusandae amet quisquam, aspernatur suscipit officiis eligendi debitis,
+                 a ipsa optio excepturi totam vel alias. Beatae, laborum. Eos, incidunt nobis.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </template>
+      </section>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <footer>
+    <p>2024- Todos los derechos reservados</p>
+    <ul>
+      <li><a href="/contacto.html">Contacto</a></li>
+      <li><a href="/acercade.html">Acerca de</a></li>
+      <li><a href="/soporte.html">Soporte</a></li>
+    </ul>
+  </footer>
+  
+  <script type="module" src="js/soporte.js"></script>
 
-        <section class="devolucion">
-            <img src="#" alt="iconodevolucion">
-            <h4>Política de reembolso</h4>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim ducimus iure a blanditiis, optio ipsa earum voluptatum voluptatem
-                    labore omnis vero unde sint impedit sequi voluptatibus, aut tempore exercitationem.</p>
-            </div>
-        </section>
+</body>
 
-        
-    </main>
-    <footer>
-        <p>2024- Todos los derechos reservados</p>
-        <ul>
-            <li><a>faq</a></li>
-            <li><a>acerca de</a></li>
-            <li><a>soporte</a></li>
-        </ul>
-    </footer>
-  </body>
 </html>
