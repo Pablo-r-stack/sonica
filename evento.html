@@ -73,8 +73,9 @@
                     </div>
                     <div class="bottom-section">
                         <div class="comprar-ticket">
-                            <p>Aun quedan entradas:</p>
+                            <p id="entradas-disponibles">Aun quedan entradas:</p>
                         </div>
+
                         <div>
                             <a class="btn-contacto" id="btn-compra" href="#">Comprar</a>
                         </div>
@@ -89,6 +90,28 @@
                 </iframe>
             </div>
         </section>
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>SELECCIONAR TUS ENTRADAS</h2>
+                <label for="tipoEntrada">Tipo de Entrada:</label>
+                <select id="tipoEntrada">
+                    <option value="Posición N1">Posición N1 - $500</option>
+                    <option value="Posición N2">Posición N2 - $700</option>
+                    <option value="Posición N3">Posición N3 - $1000</option>
+                </select>
+                <label for="cantidadEntradas">Cantidad de Entradas:</label>
+                <select id="cantidadEntradas">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button id="comprarEntradas">Comprar</button>
+            </div>
+        </div>
+
     </main>
 
     <!-- FOOTER -->
@@ -102,4 +125,5 @@
     </footer>
     <script src="Js/evento.js"></script>
 </body>
+
 </html>

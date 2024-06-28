@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Evento</title>
+    <!-- Icono para la pestaña del navegador -->
+    <link rel="icon" href="img/logo/wepik-export-202404182339020TpB.png" type="image/png">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <!-- Checkbox for mobile menu -->
+    <input type="checkbox" id="toggler">
+    <!-- End checkbox for mobile menu -->
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/index.html"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
+                    <p>Sonica</p>
+                </a>
+            </div>
+            <!-- Mobile Menu -->
+            <label for="toggler">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <!-- End Mobile Menu -->
+            <ul class="navLinks">
+                <li><a href="/acercade.html">Acerca de</a></li>
+                <li><a href="/soporte.html">Soporte</a></li>
+                <li><a href="/registrar.html">Registrar</a></li>
+                <li><a href="/login.html">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="shadow-banner">
+        <img class="banner" src="img/banner/banner2.jpg" alt="banner">
+        <h1 class="parrafo-banner">Crear evento</h1>
+    </div>
+
+    <main>
+        <section class="sectionContacto">
+            <h1 class="titulo-crearevento">Crear Nuevo Evento</h1>
+            <form class="formContacto" action="">
+                <label for="nombre">Nombre del Evento:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del evento">
+
+                <label for="fecha">Fecha (dd-mm-aaaa):</label>
+                <input type="text" id="fecha" name="fecha" placeholder="Ingrese la fecha del evento (dd-mm-aaaa)">
+
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" name="lugar" placeholder="Ingrese el lugar del evento">
+
+                <label for="hora">Hora (HH:mm):</label>
+                <input type="text" id="hora" name="hora" placeholder="Ingrese la hora del evento (HH:mm)">
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ingrese la dirección del evento">
+
+                <label for="mapa">Mapa (URL de Google Maps):</label>
+                <input type="text" id="mapa" name="mapa" placeholder="Ingrese la URL del mapa de Google Maps">
+
+                <label for="imagen">URL de la Imagen:</label>
+                <input type="text" id="imagen" name="imagen" placeholder="Ingrese la URL de la imagen del evento">
+
+                <button class="btn-contacto" type="submit">Crear Evento</button>
+            </form>
+            <div id="mensajeValidacion">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>2024- Todos los derechos reservados</p>
+        <ul>
+            <li><a href="/contacto.html">Contacto</a></li>
+            <li><a href="/acercade.html">Acerca de</a></li>
+            <li><a href="/soporte.html">Soporte</a></li>
+        </ul>
+    </footer>
+    <script src="js/nuevoEvento.js"></script>
+    <script src="Js/validacion.js"></script>
+
+</body>
+
+</html>
