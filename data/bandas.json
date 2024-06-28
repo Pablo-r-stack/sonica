@@ -2,7 +2,7 @@
     "shows": [
         {
             "nombre": "Los Nocheros",
-            "fecha": "2024-05-25",
+            "fecha": "25-05-2024",
             "lugar": "Cosquin-Cba",
             "hora": "15:00",
             "direccion": "Corrientes 857",
@@ -11,7 +11,7 @@
         },
         {
             "nombre": "Banda XXI",
-            "fecha": "2024-07-03",
+            "fecha": "03-07-2024",
             "lugar": "Rio 4",
             "hora": "22:30",
             "direccion": "Presidente Peron 1830",
@@ -20,7 +20,7 @@
         },
         {
             "nombre": "Jean Carlos",
-            "fecha": "2025-01-18",
+            "fecha": "18-01-2025",
             "lugar": "Cordoba",
             "hora": "00:00",
             "direccion": "9 de Julio 1200",
@@ -29,7 +29,7 @@
         },
         {
             "nombre": "La Konga",
-            "fecha": "2024-09-23",
+            "fecha": "23-09-2024",
             "lugar": "Mendoza",
             "hora": "23:00",
             "direccion": "Estadio Malvinas Argentinas",
@@ -38,7 +38,7 @@
         },
         {
             "nombre": "Las Pastillas del Abuelo",
-            "fecha": "2024-08-08",
+            "fecha": "08-08-2024",
             "lugar": "Bs As",
             "hora": "20:00",
             "direccion": "Luna Park",
@@ -47,7 +47,7 @@
         },
         {
             "nombre": "Q`Lokura",
-            "fecha": "2024-10-29",
+            "fecha": "29-10-2024",
             "lugar": "Santa Fe",
             "hora": "21:00",
             "direccion": "Martín Zapata 2731",
