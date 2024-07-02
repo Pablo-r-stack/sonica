@@ -21,23 +21,24 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/sonica/"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
+                <a href="/index.html"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
                     <p>Sonica</p>
                 </a>
             </div>
-            <!-- Mobile Menu -->
+            <!-- Menu Movil -->
             <label for="toggler">
                 <div></div>
                 <div></div>
                 <div></div>
             </label>
-            <!-- End Mobile Menu -->
+            <!-- Fin Menu movil -->
             <ul class="navLinks">
-                <li><a href="/sonica/acercade">Acerca de</a></li>
-                <li><a href="/sonica/soporte">Soporte</a></li>
-                <li><a href="/sonica/registrar">Registrar</a></li>
-                <li><a href="/sonica/login">Iniciar sesión</a></li>
+                <li><a href="/acercade.html">Acerca de</a> </li>
+                <li><a href="/soporte.html">Soporte</a> </li>
+                <li><a href="/registrar.html">Registrar</a> </li>
+                <li><a href="/login.html">Iniciar sesion</a> </li>
             </ul>
+
         </nav>
     </header>
 
@@ -51,7 +52,9 @@
                     <h1 class="titulo-evento"></h1>
                     <div class="evento">
                         <div class="descripcion-evento">
-                            <p></p>
+                            <p>Abril será un mes para recordar: la agrupación argentina de cuarteto más
+                                convocante de Argentina hará bailar el Movistar Arena al ritmo de todos
+                                los clásicos de sus más de dos décadas de éxito </p>
                         </div>
                         <div class="datos-evento">
                             <ul>
@@ -70,8 +73,9 @@
                     </div>
                     <div class="bottom-section">
                         <div class="comprar-ticket">
-                            <p>Aun quedan entradas:</p>
+                            <p id="entradas-disponibles">Aun quedan entradas:</p>
                         </div>
+
                         <div>
                             <a class="btn-contacto" id="btn-compra" href="#">Comprar</a>
                         </div>
@@ -86,17 +90,40 @@
                 </iframe>
             </div>
         </section>
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>SELECCIONAR TUS ENTRADAS</h2>
+                <label for="tipoEntrada">Tipo de Entrada:</label>
+                <select id="tipoEntrada">
+                    <option value="Posición N1">Posición N1 - $500</option>
+                    <option value="Posición N2">Posición N2 - $700</option>
+                    <option value="Posición N3">Posición N3 - $1000</option>
+                </select>
+                <label for="cantidadEntradas">Cantidad de Entradas:</label>
+                <select id="cantidadEntradas">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <button id="comprarEntradas">Comprar</button>
+            </div>
+        </div>
+
     </main>
 
     <!-- FOOTER -->
     <footer>
         <p>2024- Todos los derechos reservados</p>
         <ul>
-            <li><a href="/sonica/contacto">Contacto</a></li>
-            <li><a href="/sonica/acercade">Acerca de</a></li>
-            <li><a href="/sonica/soporte">Soporte</a></li>
+            <li><a href="/contacto.html">Contacto</a></li>
+            <li><a href="/acercade.html">Acerca de</a></li>
+            <li><a href="/soporte.html">Soporte</a></li>
         </ul>
     </footer>
-    <script src="Js/evento.js"></script>
+    <script type="module" src="Js/evento.js"></script>
 </body>
+
 </html>

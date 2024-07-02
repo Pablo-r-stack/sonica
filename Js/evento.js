@@ -1,23 +1,38 @@
+import auth from "./modules/auth.js";
+
 // Recuperar los datos del local storage
 const selectedShow = JSON.parse(localStorage.getItem('selectedShow'));
 const btnCompra = document.querySelector('#btn-compra');
 
 // Verificar si hay datos disponibles
 document.addEventListener('DOMContentLoaded', () => {
+
+    ///////////////////////////////////////
+    const selectedShow = JSON.parse(localStorage.getItem('selectedShow'));
+    const btnCompra = document.querySelector('#btn-compra');
+    console.log('el token es ' + auth.checkAuth());
+    if(!auth.checkAuth()){
+        btnCompra.style.display = 'none';
+    }
+    const modal = document.getElementById("modal");
+    const span = document.getElementsByClassName("close")[0];
+    const comprarEntradas = document.getElementById("comprarEntradas");
+    const entradasDisponibles = document.getElementById('entradas-disponibles');
+    //////////////////////////////////////////
     if (selectedShow) {
         console.log(selectedShow); // Agrega esta línea para verificar los datos del evento seleccionado
         document.querySelector('.banda-evento').src = selectedShow.imagenSrc;
         document.querySelector('.titulo-evento').textContent = selectedShow.nombre;
-        document.querySelector('.descripcion-evento p').textContent = selectedShow.descripcion;
         document.querySelector('.lugar-evento').textContent = `Lugar: ${selectedShow.lugar}`;
         document.querySelector('.fecha-evento').textContent = `Fecha: ${selectedShow.fecha}`;
         document.querySelector('.hora-evento').textContent = `Hora: ${selectedShow.hora}`;
         document.querySelector('.direccion-evento').textContent = `Direccion: ${selectedShow.direccion}`;
-        
+
         document.querySelector('.mapa iframe').src = selectedShow.mapa;
 
         // Define la fecha y hora del evento seleccionado
-        const fechaHoraString = `${selectedShow.fecha} ${selectedShow.hora}`;
+        const [año, mes, dia] = selectedShow.fecha.split('-');
+        const fechaHoraString = `${año}-${mes}-${dia}T${selectedShow.hora}:00`;
         const fechaHoraEvento = new Date(fechaHoraString).getTime();
         console.log('Fecha y hora del evento:', new Date(fechaHoraEvento)); // Agrega esta línea para verificar la fecha y hora del evento
 
@@ -27,11 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.contenedor-evento').innerHTML = '<p>No hay información disponible para este evento.</p>';
     }
 
-    // Función para iniciar el temporizador
+    btnCompra.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita el comportamiento predeterminado de anclar el enlace
+        modal.style.display = "block";
+    });
+
+    span.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    comprarEntradas.addEventListener('click', () => {
+        const tipoEntrada = document.getElementById('tipoEntrada').value;
+        const cantidadEntradas = document.getElementById('cantidadEntradas').value;
+        alert(`Compraste ${cantidadEntradas} entrada en el sector ${tipoEntrada}`);
+        modal.style.display = "none";
+    });
+
     function iniciarTemporizador(fechaEvento) {
         const countdownElement = document.getElementById('countdown-timer');
 
-        // Actualizar el temporizador cada segundo
         const interval = setInterval(() => {
             const ahora = new Date().getTime();
             const tiempoRestante = fechaEvento - ahora;
@@ -39,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tiempoRestante < 0) {
                 clearInterval(interval);
                 countdownElement.textContent = "El evento ya comenzó";
+                btnCompra.style.display = "none"; // Ocultar el botón comprar
+                entradasDisponibles.textContent = "El evento ya concluyó, no es posible vender entradas"; // Cambiar el texto
                 return;
             }
 
@@ -50,8 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
             countdownElement.textContent = `Faltan: ${dias} días | ${horas} horas | ${minutos} minutos | ${segundos} segundos`;
         }, 1000);
     }
-
-    btnCompra.addEventListener('click', () => {
-        alert('Proximamente');
-    })
 });

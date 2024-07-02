@@ -1,3 +1,5 @@
+import { conexionApi } from "./modules/conexionApi.js";
+
 const formulario = document.querySelector('form');
 const campos = formulario.querySelectorAll('input, textarea, select');
 const msgValidacion = document.querySelector('#mensajeValidacion')
@@ -88,10 +90,26 @@ const borrarMensaje = (campo) => {
 
 
 //funcion envio de formulario
-const enviarDatos = (campos) => {
+const enviarDatos = async (campos) => {
+    const loginForm = document.querySelector('[data-login]'); // Suponiendo que tienes un atributo data-login en el formulario de login
+
     const mensaje = {};
     campos.forEach((campo) => {
         mensaje[campo.id] = campo.value.trim();
     });
-    alert(`Este mensaje se enviara proximamente${JSON.stringify(mensaje)}`);
-}
+
+    try {
+        let respuesta;
+        if (loginForm != null) {
+            respuesta = await conexionApi.login(mensaje);
+            if (respuesta) window.location.href = 'index.html';
+        } else {
+            respuesta = await conexionApi.registro(mensaje);
+            if (respuesta) window.location.href = 'index.html';
+        }
+        // alert(`Mensaje enviado correctamente: ${JSON.stringify(respuesta)}`);
+        // Aquí podrías hacer algo más después de un login o registro exitoso
+    } catch (error) {
+        alert(`Error al enviar mensaje: ${error.message}`);
+    }
+};
