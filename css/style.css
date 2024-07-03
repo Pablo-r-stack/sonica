@@ -564,6 +564,7 @@ section {
 
 .sectionContacto textarea {
     height: 7.5rem;
+    margin: 0 0 2rem;
 }
 
 textarea {
