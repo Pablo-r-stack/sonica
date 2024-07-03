@@ -32,7 +32,7 @@ main {
     min-height: 60vh;
 }
 
-a {
+a, #logoutButton {
     font-family: var(--fuenteLogoLink);
 }
 
@@ -109,11 +109,12 @@ header {
     gap: 5rem;
 }
 
-.navLinks li a {
+.navLinks li a, #logoutButton {
     font-size: 2rem;
     transition: 0.3s;
 
     &:hover {
+        cursor: pointer;
         font-weight: bolder;
     }
 }
@@ -134,11 +135,6 @@ header {
     transition: 0.5s;
     overflow: hidden;
     z-index: 10;
-}
-
-.navLinks Button{
-    font-family: var(--fuenteLogoLink);
-    font-size: 2rem;
 }
 
 .navLinks li:nth-child(1) {
@@ -680,6 +676,10 @@ textarea {
 .comprar-btn {
     margin: 0 auto;
     margin: 0 2rem;
+}
+
+#btn-compra {
+    visibility: hidden;
 }
 
 .tiempo p {

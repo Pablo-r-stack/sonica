@@ -22,8 +22,8 @@ const login = async (params) => {
     try {
         const respuesta = await fetch(`${apiUrl}/usuario/login`, opciones);
         const datos = await respuesta.json();
-        if(datos.access_token){
-            auth.login(datos.access_token);
+        if(datos.access_token && datos.rol){
+            auth.login(datos.access_token, datos.rol);
         }
         return datos;
     } catch (error) {

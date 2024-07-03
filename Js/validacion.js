@@ -105,7 +105,7 @@ const enviarDatos = async (campos) => {
             if (respuesta) window.location.href = 'index.html';
         } else {
             respuesta = await conexionApi.registro(mensaje);
-            if (respuesta) window.location.href = 'index.html';
+            if (respuesta) alert('Registro exitoso'), window.location.href = 'index.html';
         }
         // alert(`Mensaje enviado correctamente: ${JSON.stringify(respuesta)}`);
         // Aquí podrías hacer algo más después de un login o registro exitoso

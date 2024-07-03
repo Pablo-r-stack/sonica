@@ -1,4 +1,5 @@
 import { preguntas } from "../data/preguntas.js";
+import auth from "./modules/auth.js";
 
 //VARIABLES
 const cartaPregunta = document.querySelector(".contenedor-cartas-soporte");
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   preguntas.forEach((preg)=>{
     cargarPreguntas(preg);
   })
+  auth.updateNav();
 })
 
 

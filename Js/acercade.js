@@ -1,10 +1,12 @@
 import { colaborador } from "../data/colaborador.js";
+import auth from "./modules/auth.js";
 
 //VARIABLES
 const contenedor = document.querySelector(".container__cards");
 //EVENTOS
 document.addEventListener('DOMContentLoaded', function () {
     cargarTarjeta(colaborador);
+    auth.updateNav();
 })
 
 

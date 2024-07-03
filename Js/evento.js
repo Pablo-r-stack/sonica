@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedShow = JSON.parse(localStorage.getItem('selectedShow'));
     const btnCompra = document.querySelector('#btn-compra');
     console.log('el token es ' + auth.checkAuth());
-    if(!auth.checkAuth()){
-        btnCompra.style.display = 'none';
+    if(auth.checkAuth() && auth.checkRol('Cliente')){
+        btnCompra.style.visibility = 'visible';
     }
     const modal = document.getElementById("modal");
     const span = document.getElementsByClassName("close")[0];
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selectedShow) {
         console.log(selectedShow); // Agrega esta línea para verificar los datos del evento seleccionado
         document.querySelector('.banda-evento').src = selectedShow.imagenSrc;
-        document.querySelector('.titulo-evento').textContent = selectedShow.nombre;
+        document.querySelector('.titulo-evento').textContent = selectedShow.titulo;
         document.querySelector('.lugar-evento').textContent = `Lugar: ${selectedShow.lugar}`;
         document.querySelector('.fecha-evento').textContent = `Fecha: ${selectedShow.fecha}`;
         document.querySelector('.hora-evento').textContent = `Hora: ${selectedShow.hora}`;

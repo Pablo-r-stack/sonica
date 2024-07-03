@@ -1,17 +1,25 @@
 // auth.js
 const auth = {
     checkAuth() {
-        return !!localStorage.getItem('token');
+        return !!sessionStorage.getItem('token');
     },
 
-    login(token) {
-        localStorage.setItem('token', token);
+    checkRol(rol){
+        const session = sessionStorage.getItem('rol');
+        if(session) return session == rol;
+    },
+
+    login(token, rol) {
+        sessionStorage.setItem('token', token);
+        sessionStorage.setItem('rol', rol);
         this.updateNav();
     },
 
     logout() {
-        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
+        sessionStorage.removeItem('rol');
         this.updateNav();
+        window.location.href = 'index.html';
     },
 
     updateNav() {
