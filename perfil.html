@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <!-- Icon for the browser tab -->
+    <link rel="icon" href="img/logo/wepik-export-202404182339020TpB.png" type="image/png">
+    <!-- Image for sharing the link -->
+    <meta property="og:image" content="https://pablo-r-stack.github.io/sonica/img/previsualizacion.png">
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .section-perfil h1 {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .perfil-contenido {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 3rem;
+        }
+
+        .profile-details {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .profile-details h2 {
+            margin-bottom: 10px;
+        }
+
+        .profile-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .datos-perfil {
+            border: 1px solid white;
+            padding: 2rem;
+        }
+
+        .datos-perfil h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .datos-perfil p {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #000000;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            margin-bottom: 1rem;
+        }
+
+        .modal label,
+        .modal input {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .modal button {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #45a049;
+        }
+
+        @media (min-width: 768px) {
+            .perfil-contenido {
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+                margin: 3rem;
+                justify-content: space-around;
+            }
+
+            .datos-perfil p {
+                font-size: 1.7rem;
+            }
+
+            .modal label,
+            .modal input {
+                font-size: 1.8rem;
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+            .datos-perfil p {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/sonica/"><img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
+                    <p>Sonica</p>
+                </a>
+            </div>
+            <ul class="navLinks">
+                <li><a href="/sonica/acercade">Acerca de</a></li>
+                <li><a href="/sonica/soporte">Soporte</a></li>
+                <li><a href="/sonica/registrar">Registrar</a></li>
+                <li><a href="/sonica/login">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- BANNER -->
+    <div class="shadow-banner">
+        <img class="banner" src="img/banner/banner2.jpg" alt="banner">
+        <h1 class="parrafo-banner">Perfil</h1>
+    </div>
+    <main>
+        <section class="section-perfil">
+            <h1>Bienvenido: <span id="user-name">USUARIO</span></h1>
+            <div class="perfil-contenido">
+                <div class="datos-perfil">
+                    <h2>Tus datos:</h2>
+                    <p>Nombre: <span id="user-nombre">EL NOMBRE</span></p>
+                    <p>Email: <span id="user-email">EL EMAIL</span></p>
+                    <p>País: <span id="user-pais">EL PAIS</span></p>
+                    <p>DNI: <span id="user-dni"> EL DNI</span></p>
+                    <p>TIPO DE CUENTA: <span id="user-rol">TIPO DE CUENTA</span></p>
+                </div>
+                <div class="profile-buttons">
+                    <button id="edit-data-btn" class="btn-contacto">Cambiar Datos</button>
+                    <button id="change-password-btn" class="btn-contacto">Cambiar Contraseña</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Cambiar Datos -->
+    <div id="edit-data-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-edit-data-modal">&times;</span>
+            <h2>Cambiar Datos</h2>
+            <form class="formContacto" id="edit-data-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su email">
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" placeholder="Ingrese su país">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" placeholder="Ingrese su DNI">
+                <button class="btn-contacto" type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal Cambiar Contraseña -->
+    <div id="change-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-change-password-modal">&times;</span>
+            <h2>Cambiar Contraseña</h2>
+            <form class="formContacto" id="change-password-form">
+                <label for="oldPassword">Contraseña Actual:</label>
+                <input type="password" id="oldPassword" name="oldPassword" placeholder="Ingrese su contraseña actual">
+                <label for="newPassword">Nueva Contraseña:</label>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Ingrese su nueva contraseña">
+                <button class="btn-contacto" type="submit">Cambiar Contraseña</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        // Get modal elements
+        const editDataModal = document.getElementById('edit-data-modal');
+        const changePasswordModal = document.getElementById('change-password-modal');
+
+        // Get open modal buttons
+        const editDataBtn = document.getElementById('edit-data-btn');
+        const changePasswordBtn = document.getElementById('change-password-btn');
+
+        // Get close buttons
+        const closeEditDataModal = document.getElementById('close-edit-data-modal');
+        const closeChangePasswordModal = document.getElementById('close-change-password-modal');
+
+        // Open modals
+        editDataBtn.onclick = function () {
+            editDataModal.style.display = 'block';
+        }
+        changePasswordBtn.onclick = function () {
+            changePasswordModal.style.display = 'block';
+        }
+
+        // Close modals
+        closeEditDataModal.onclick = function () {
+            editDataModal.style.display = 'none';
+        }
+        closeChangePasswordModal.onclick = function () {
+            changePasswordModal.style.display = 'none';
+        }
+
+        // Close modals when clicking outside the modal content
+        window.onclick = function (event) {
+            if (event.target === editDataModal) {
+                editDataModal.style.display = 'none';
+            }
+            if (event.target === changePasswordModal) {
+                changePasswordModal.style.display = 'none';
+            }
+        }
+
+        // Form submission (placeholder logic)
+        const editDataForm = document.getElementById('edit-data-form');
+        const changePasswordForm = document.getElementById('change-password-form');
+
+        editDataForm.onsubmit = function (event) {
+            event.preventDefault(); // Prevent form submission for demo purposes
+            // Here you would handle form submission to backend
+            console.log('Submitting edit data form...');
+            editDataModal.style.display = 'none'; // Close modal after submission
+        }
+
+        changePasswordForm.onsubmit = function (event) {
+            event.preventDefault(); // Prevent form submission for demo purposes
+            // Here you would handle form submission to backend
+            console.log('Submitting change password form...');
+            changePasswordModal.style.display = 'none'; // Close modal after submission
+        }
+    </script>
+
+    <footer>
+        <p>2024- Todos los derechos reservados</p>
+        <ul>
+            <li><a href="/sonica/contacto">Contacto</a></li>
+            <li><a href="/sonica/acercade">Acerca de</a></li>
+            <li><a href="/sonica/soporte">Soporte</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>
