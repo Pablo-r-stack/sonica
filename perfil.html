@@ -158,15 +158,15 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="/sonica/"><img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
+                <a href="/"><img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
                     <p>Sonica</p>
                 </a>
             </div>
             <ul class="navLinks">
-                <li><a href="/sonica/acercade">Acerca de</a></li>
-                <li><a href="/sonica/soporte">Soporte</a></li>
-                <li><a href="/sonica/registrar">Registrar</a></li>
-                <li><a href="/sonica/login">Iniciar sesión</a></li>
+                <li><a href="/acercade.html">Acerca de</a></li>
+                <li><a href="/soporte.html">Soporte</a></li>
+                <li><a href="/registrar.html">Registrar</a></li>
+                <li><a href="/login.html">Iniciar sesión</a></li>
             </ul>
         </nav>
     </header>
@@ -177,20 +177,9 @@
     </div>
     <main>
         <section class="section-perfil">
-            <h1>Bienvenido: <span id="user-name">USUARIO</span></h1>
-            <div class="perfil-contenido">
-                <div class="datos-perfil">
-                    <h2>Tus datos:</h2>
-                    <p>Nombre: <span id="user-nombre">EL NOMBRE</span></p>
-                    <p>Email: <span id="user-email">EL EMAIL</span></p>
-                    <p>País: <span id="user-pais">EL PAIS</span></p>
-                    <p>DNI: <span id="user-dni"> EL DNI</span></p>
-                    <p>TIPO DE CUENTA: <span id="user-rol">TIPO DE CUENTA</span></p>
-                </div>
-                <div class="profile-buttons">
-                    <button id="edit-data-btn" class="btn-contacto">Cambiar Datos</button>
-                    <button id="change-password-btn" class="btn-contacto">Cambiar Contraseña</button>
-                </div>
+            <div class="profile-buttons">
+                <button id="edit-data-btn" class="btn-contacto">Cambiar Datos</button>
+                <button id="change-password-btn" class="btn-contacto">Cambiar Contraseña</button>
             </div>
         </section>
     </main>
@@ -201,14 +190,18 @@
             <span class="close" id="close-edit-data-modal">&times;</span>
             <h2>Cambiar Datos</h2>
             <form class="formContacto" id="edit-data-form">
+                <input type="hidden" id="id" name="id" value="id" disabled>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese su nombre">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Ingrese su email">
                 <label for="pais">País:</label>
                 <input type="text" id="pais" name="pais" placeholder="Ingrese su país">
                 <label for="dni">DNI:</label>
                 <input type="text" id="dni" name="dni" placeholder="Ingrese su DNI">
+                <input type="hidden" id="rol" name="rol" value="rol" disabled>
                 <button class="btn-contacto" type="submit">Guardar Cambios</button>
             </form>
         </div>
@@ -220,74 +213,15 @@
             <span class="close" id="close-change-password-modal">&times;</span>
             <h2>Cambiar Contraseña</h2>
             <form class="formContacto" id="change-password-form">
-                <label for="oldPassword">Contraseña Actual:</label>
-                <input type="password" id="oldPassword" name="oldPassword" placeholder="Ingrese su contraseña actual">
-                <label for="newPassword">Nueva Contraseña:</label>
-                <input type="password" id="newPassword" name="newPassword" placeholder="Ingrese su nueva contraseña">
+                <label for="password">Nueva Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña actual">
+                <label for="password2">Repita nueva Contraseña:</label>
+                <input type="password" id="password2" name="password2" placeholder="Ingrese su nueva contraseña">
                 <button class="btn-contacto" type="submit">Cambiar Contraseña</button>
             </form>
         </div>
     </div>
     
-
-    <script>
-        // Get modal elements
-        const editDataModal = document.getElementById('edit-data-modal');
-        const changePasswordModal = document.getElementById('change-password-modal');
-
-        // Get open modal buttons
-        const editDataBtn = document.getElementById('edit-data-btn');
-        const changePasswordBtn = document.getElementById('change-password-btn');
-
-        // Get close buttons
-        const closeEditDataModal = document.getElementById('close-edit-data-modal');
-        const closeChangePasswordModal = document.getElementById('close-change-password-modal');
-
-        // Open modals
-        editDataBtn.onclick = function () {
-            editDataModal.style.display = 'block';
-        }
-        changePasswordBtn.onclick = function () {
-            changePasswordModal.style.display = 'block';
-        }
-
-        // Close modals
-        closeEditDataModal.onclick = function () {
-            editDataModal.style.display = 'none';
-        }
-        closeChangePasswordModal.onclick = function () {
-            changePasswordModal.style.display = 'none';
-        }
-
-        // Close modals when clicking outside the modal content
-        window.onclick = function (event) {
-            if (event.target === editDataModal) {
-                editDataModal.style.display = 'none';
-            }
-            if (event.target === changePasswordModal) {
-                changePasswordModal.style.display = 'none';
-            }
-        }
-
-        // Form submission (placeholder logic)
-        const editDataForm = document.getElementById('edit-data-form');
-        const changePasswordForm = document.getElementById('change-password-form');
-
-        editDataForm.onsubmit = function (event) {
-            event.preventDefault(); // Prevent form submission for demo purposes
-            // Here you would handle form submission to backend
-            console.log('Submitting edit data form...');
-            editDataModal.style.display = 'none'; // Close modal after submission
-        }
-
-        changePasswordForm.onsubmit = function (event) {
-            event.preventDefault(); // Prevent form submission for demo purposes
-            // Here you would handle form submission to backend
-            console.log('Submitting change password form...');
-            changePasswordModal.style.display = 'none'; // Close modal after submission
-        }
-    </script>
-
     <footer>
         <p>2024- Todos los derechos reservados</p>
         <ul>
@@ -296,6 +230,7 @@
             <li><a href="/sonica/soporte">Soporte</a></li>
         </ul>
     </footer>
+    <script type="module" src="Js/perfil.js"></script>
 </body>
 
 </html>

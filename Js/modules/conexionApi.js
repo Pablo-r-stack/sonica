@@ -22,7 +22,7 @@ const login = async (params) => {
     try {
         const respuesta = await fetch(`${apiUrl}/usuario/login`, opciones);
         const datos = await respuesta.json();
-        if(datos.access_token && datos.rol){
+        if (datos.access_token && datos.rol) {
             auth.login(datos.access_token, datos.rol);
         }
         return datos;
@@ -49,9 +49,174 @@ const registro = async (params) => {
     }
 };
 
+const obtenerDatosUsuarios = async () => {
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        };
+        const respuesta = await consultarApi(`${apiUrl}/usuarios/datosSesion`, opciones);
+        return respuesta;
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
+
+const modificarDatosUsuario = async (params, id) => {
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/usuarios/${id}`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+};
+
+const modificarPassword = async (params, id) => {
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/usuarios/cambiarPass`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+};
+
+const listarUsuarios = async () => {
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        };
+        const respuesta = await consultarApi(`${apiUrl}/usuarios/lista`, opciones);
+        return respuesta;
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
+
+const adminModificarRol = async (params) => {
+    console.log(params);
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/usuarios/modificarRol`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+};
+
+const adminEliminarUsuario = async (id) =>{
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/usuarios/${id}`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
+
+const borrarEvento = async(id) =>{
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/eventos/${id}`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
+
+const eventosOrganizador = async () => {
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        };
+        const respuesta = await consultarApi(`${apiUrl}/eventos/eventosOrganizador`, opciones);
+        return respuesta;
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
 
 
 
 export const conexionApi = {
-    consultarApi, login, registro
+    consultarApi, login, registro, obtenerDatosUsuarios, modificarDatosUsuario, modificarPassword, 
+    listarUsuarios, adminModificarRol, adminEliminarUsuario, borrarEvento, eventosOrganizador
 }

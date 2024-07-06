@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador</title>
+    <!-- Icon for the browser tab -->
+    <link rel="icon" href="img/logo/wepik-export-202404182339020TpB.png" type="image/png">
+    <!-- Image for sharing the link -->
+    <meta property="og:image" content="https://pablo-r-stack.github.io/sonica/img/previsualizacion.png">
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .section-organizador h1{
+        text-align: center;
+        font-size: 3rem;
+    }
+    .section-organizador{
+       width: 100%;
+       padding: 2rem;
+    }
+    .event-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .event-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 2rem;
+    }
+
+    .event-item span {
+        flex: 1;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .event-item button {
+        width: 200px;
+        margin-left: 1rem;
+        font-size: 1.4rem;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: #000000;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal h2 {
+        margin-bottom: 1rem;
+    }
+
+    .modal label,
+    .modal input,
+    .modal textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .modal button {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal button:hover {
+        background-color: #45a049;
+    }
+
+    @media (min-width: 768px) {
+        .section-organizador h1{
+        
+        font-size: 3.5rem;
+    }
+    .section-organizador{
+       max-width: 950px;
+    }
+        .event-item span {
+            font-size: 1.7rem;
+        }
+
+        .event-item button {
+            font-size: 1.7rem;
+        }
+
+        .modal label,
+        .modal input {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .event-item button {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Checkbox for mobile menu -->
+    <input type="checkbox" id="toggler">
+    <!-- End checkbox for mobile menu -->
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"> <img src="img/logo/wepik-export-202404182339020TpB.png" alt="logo">
+                    <p>Sonica</p>
+                </a>
+            </div>
+            <!-- Mobile Menu -->
+            <label for="toggler">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+            <!-- End Mobile Menu -->
+            <ul class="navLinks">
+                <li><a href="/acercade.html">Acerca de</a></li>
+                <li><a href="/soporte.html">Soporte</a></li>
+                <li><a href="/registrar.html">Registrar</a></li>
+                <li><a href="/login.html">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="shadow-banner">
+        <img class="banner" src="img/banner/banner2.jpg" alt="banner">
+        <h1 class="parrafo-banner">Organizador</h1>
+    </div>
+
+    <main>
+        <section class="section-organizador">
+            <h1>Tus Eventos</h1>
+            <div class="event-list">
+                <ul>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modificar Evento</h2>
+            <form id="modificarEventoForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" name="lugar" required>
+
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="mapa">Mapa:</label>
+                <input type="url" id="mapa" name="mapa">
+
+                <label for="imagen">Imagen:</label>
+                <input type="url" id="imagen" name="imagen">
+
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" cols="0 auto" rows="10"
+                    placeholder="Ingrese una descripcion"></textarea>
+
+                <button class="btn-contacto" type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("modal");
+            const closeModal = document.getElementsByClassName("close")[0];
+            const modifyButtons = document.getElementsByClassName("modificar-btn");
+
+            Array.from(modifyButtons).forEach(button => {
+                button.addEventListener("click", () => {
+                    modal.style.display = "block";
+                });
+            });
+
+            closeModal.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>2024- Todos los derechos reservados</p>
+        <ul>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+        </ul>
+    </footer>
+    <script type="module" src="Js/organizador.js"></script>
+</body>
+
+</html>
