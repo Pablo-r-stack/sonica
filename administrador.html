@@ -12,156 +12,6 @@
     <!-- CSS Styles -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .section-admin {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .section-admin .admin-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .section-admin button {
-            white-space: nowrap;
-            max-width: 200px;
-            height: 50px;
-            font-size: 1.5rem;
-            background-color: #0F1640;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .section-admin button:hover {
-            background-color: #2055b1;
-        }
-
-        .lista-usuarios h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-
-        .lista-usuarios,
-        .lista-eventos {
-            display: none;
-            padding: 20px;
-            background-color: #1f1d1d;
-        }
-
-        .user-list {
-            display: flex;
-            margin-bottom: 1rem;
-            list-style-type: none;
-            padding: 1rem;
-            border: 1px solid white;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .user-list li {
-            display: inline-block;
-            margin-right: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .user-list li strong {
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-
-        .user-list .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-
-        }
-
-        .user-list .action-buttons button {
-
-            width: 100px;
-            margin-left: 1rem;
-            font-size: 1.5rem;
-            margin: auto 0.5rem;
-            background-color: #0F1640;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .user-list .action-buttons button:hover {
-            background-color: #0F1640;
-        }
-
-        .rolSelect {
-            background-color: #484444;
-        }
-
-        .texto {
-            padding: 1rem;
-        }
-
-        .event-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .event-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 2rem;
-            flex-wrap: nowrap;
-        }
-
-        .event-item span {
-            flex: 1;
-            font-size: 1.5rem;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-        .event-item button {
-            width: 200px;
-            margin-left: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .lista-eventos h1 {
-            font-size: 2.5rem;
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .user-list .action-buttons {
-                display: flex;
-                flex-direction: row;
-
-            }
-
-        }
-
-        @media (min-width: 1024px) {
-            .lista-usuarios h2 {
-                text-align: center;
-                margin-bottom: 1rem;
-                font-size: 3rem;
-            }
-
-            .user-list .action-buttons button {
-                width: 120px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -203,18 +53,18 @@
     <main>
         <section class="section-admin">
             <div class="admin-buttons">
-                <button class="btn-contacto" data-usuarioBtn>Lista de Usuarios</button>
-                <button class="btn-contacto" data-eventosBtn>Lista de Eventos</button>
+                <button class="btn-contacto" data-usuarioBtn>LISTA DE USUARIOS </button>
+                <button class="btn-contacto" data-eventosBtn>LISTA DE EVENTOS</button>
             </div>
         </section>
 
         <section class="lista-usuarios">
-            <h2>Lista de Usuarios</h2>
+            
         </section>
 
         <section class="lista-eventos">
-            <h1>Modificar Evento</h1>
-            <div class="event-list">
+            <h1>MODIFICAR EVENTO</h1>
+            <div class="event-list2">
                 <ul>
                 </ul>
             </div>
@@ -230,44 +80,7 @@
             <li><a href="soporte.html">Soporte</a></li>
         </ul>
     </footer>
-
-    <!-- <script>
-        function showUsuarios() {
-            document.querySelector('.lista-usuarios').style.display = 'block';
-            document.querySelector('.lista-eventos').style.display = 'none';
-        }
-
-        function showEventos() {
-            document.querySelector('.lista-usuarios').style.display = 'none';
-            document.querySelector('.lista-eventos').style.display = 'block';
-        }
-
-        function editRol() {
-            const select = document.getElementById('rolSelect');
-            const roleText = document.querySelector('.user-role');
-            const editBtn = document.querySelector('.action-buttons button:nth-child(1)');
-            const saveBtn = document.querySelector('.action-buttons button:nth-child(3)');
-            const deleteBtn = document.querySelector('.action-buttons button:nth-child(2)');
-
-            select.style.display = 'inline-block';
-            select.value = roleText.innerText.trim().toLowerCase();
-            roleText.style.display = 'none';
-
-            editBtn.style.display = 'none';
-            saveBtn.style.display = 'inline-block';
-            deleteBtn.style.display = 'none';
-
-            saveBtn.addEventListener('click', function () {
-                roleText.innerText = select.options[select.selectedIndex].text;
-                select.style.display = 'none';
-                roleText.style.display = 'inline-block';
-                editBtn.style.display = 'inline-block';
-                saveBtn.style.display = 'none';
-                deleteBtn.style.display = 'inline-block';
-            });
-        }
-    </script> -->
-<script type="module" src="Js/admin.js"></script>
+    <script type="module" src="Js/admin.js"></script>
 </body>
 
 </html>

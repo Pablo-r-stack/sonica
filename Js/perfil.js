@@ -20,7 +20,7 @@ const cargaDatosUsuario = (async () => {
             <h1>Bienvenido: <span id="user-name">${usuario.nombre} ${usuario.apellido}</span></h1>
             <div class="perfil-contenido">
                 <div class="datos-perfil">
-                    <h2>Tus datos:</h2>
+                    <h2>TUS DATOS</h2>
                     <p>Nombre: <span id="user-nombre">${usuario.nombre}</span></p>
                     <p>Email: <span id="user-email">${usuario.email}</span></p>
                     <p>País: <span id="user-pais">${usuario.pais}</span></p>

@@ -15,7 +15,7 @@ usuariosBtn.addEventListener('click', async () => {
     console.log(usuarios);
     if (usuarios.length > 0) {
         const listaUsuarios = document.querySelector('.lista-usuarios');
-        listaUsuarios.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
+        listaUsuarios.innerHTML = '<h1 class="titulo-listaUsuarios">LISTA DE USUARIOS</h1>'; // Limpiar la lista antes de agregar nuevos elementos
         usuarios.forEach(usuario => {
             const row = document.createElement('ul');
             row.classList.add('user-list');
@@ -102,12 +102,12 @@ eventosBtn.addEventListener('click', async () => {
     console.log(eventos);
 
     if (eventos.length > 0) {
-        const listaEventos = document.querySelector('.event-list ul');
+        const listaEventos = document.querySelector('.event-list2 ul');
         listaEventos.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
 
         eventos.forEach(evento => {
             const itemLista = document.createElement('li');
-            itemLista.classList.add('event-item');
+            itemLista.classList.add('event-item2');
             itemLista.setAttribute('data-id', evento.id); // Agregar data-id al li
             itemLista.innerHTML = `
                 <span>${evento.titulo}</span>
