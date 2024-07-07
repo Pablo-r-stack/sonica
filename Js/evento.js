@@ -1,17 +1,20 @@
 import auth from "./modules/auth.js";
-
+import { conexionApi } from "./modules/conexionApi.js";
 // Recuperar los datos del local storage
 const selectedShow = JSON.parse(localStorage.getItem('selectedShow'));
 const btnCompra = document.querySelector('#btn-compra');
 
 // Verificar si hay datos disponibles
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async() => {
 
     ///////////////////////////////////////
     const selectedShow = JSON.parse(localStorage.getItem('selectedShow'));
     const btnCompra = document.querySelector('#btn-compra');
+    const entradas = await conexionApi.obtenerEntradas(selectedShow.id);
     console.log('el token es ' + auth.checkAuth());
-    if(auth.checkAuth() && auth.checkRol('Cliente')){
+    if(auth.checkAuth() && auth.checkRol('Cliente') && entradas.disponibles > 0){
+        const parrafoEntradas = document.querySelector('#entradas-disponibles');
+        parrafoEntradas.innerHTML= 'Aun hay entradas disponibles';
         btnCompra.style.visibility = 'visible';
     }
     const modal = document.getElementById("modal");
@@ -27,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.fecha-evento').textContent = `Fecha: ${selectedShow.fecha}`;
         document.querySelector('.hora-evento').textContent = `Hora: ${selectedShow.hora}`;
         document.querySelector('.direccion-evento').textContent = `Direccion: ${selectedShow.direccion}`;
-
-        document.querySelector('.mapa iframe').src = selectedShow.mapa;
+        document.querySelector('.descripcion-evento p').textContent = `${selectedShow.descripcion}`
+        document.querySelector('.mapa iframe').src = selectedShow.coordenadas;
 
         // Define la fecha y hora del evento seleccionado
         const [año, mes, dia] = selectedShow.fecha.split('-');
@@ -57,10 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    comprarEntradas.addEventListener('click', () => {
-        const tipoEntrada = document.getElementById('tipoEntrada').value;
+    comprarEntradas.addEventListener('click', async() => {
         const cantidadEntradas = document.getElementById('cantidadEntradas').value;
-        alert(`Compraste ${cantidadEntradas} entrada en el sector ${tipoEntrada}`);
+        const mensaje = {cantidadEntradas: cantidadEntradas};
+        console.log(mensaje);
+        const resultado = await conexionApi.comprarEntradas(mensaje, selectedShow.id);
+        alert(resultado.message);
         modal.style.display = "none";
     });
 

@@ -25,19 +25,43 @@ const auth = {
     updateNav() {
         const isLoggedIn = this.checkAuth();
         const navLinksContainer = document.querySelector('.navLinks');
-        const fragmentPath = isLoggedIn ? '../templates/header-logged-in.html' : '../templates/header-logged-out.html';
+        const fragmentPath = isLoggedIn ? siLog() : noLog;
+        navLinksContainer.outerHTML = fragmentPath;
 
-        fetch(fragmentPath)
-            .then(response => response.text())
-            .then(html => {
-                navLinksContainer.outerHTML = html;
-                if (isLoggedIn) {
-                    document.getElementById('logoutButton').addEventListener('click', () => this.logout());
-                }
-            })
-            .catch(error => console.error('Error al cargar el fragmento:', error));
+        if(isLoggedIn)document.getElementById('logoutButton').addEventListener('click', () => this.logout());
+        // fetch(fragmentPath)
+        //     .then(response => response.text())
+        //     .then(html => {
+        //         navLinksContainer.outerHTML = html;
+        //         if (isLoggedIn) {
+        //             document.getElementById('logoutButton').addEventListener('click', () => this.logout());
+        //         }
+        //     })
+        //     .catch(error => console.error('Error al cargar el fragmento:', error));
     }
 };
+
+const siLog = () => {
+    const nav = `<ul class="navLinks">
+        <li><a href="acercade.html">Acerca de</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
+        ${auth.checkRol('Organizador') ? '<li><a href="organizador.html">Mis eventos</a></li>' : ''}
+        ${auth.checkRol('Administrador') ? '<li><a href="administrador.html">Gestion</a></li>' : ''}
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><button id="logoutButton">Logout</button></li>
+    </ul>`;
+    return nav;
+};
+
+    
+const noLog = `
+<ul class="navLinks">
+    <li><a href="acercade.html">Acerca de</a></li>
+    <li><a href="soporte.html">Soporte</a></li>
+    <li><a href="registrar.html">Registrar</a></li>
+    <li><a href="login.html">Iniciar sesión</a></li>
+</ul
+`;
 
 document.addEventListener('DOMContentLoaded', () => {
     auth.updateNav();

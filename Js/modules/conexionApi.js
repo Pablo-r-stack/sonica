@@ -214,9 +214,135 @@ const eventosOrganizador = async () => {
     }
 }
 
+const obtenerEventoId = async (id)=>{
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        };
+        const respuesta = await consultarApi(`${apiUrl}/eventos/${id}`, opciones);
+        return respuesta;
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
+
+const eventoModificar = async (params, id) => {
+    console.log(`Datos evento a modificar ${JSON.stringify(params)} id ${id}` );
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/eventos/${id}`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+};
+
+const eventoCrear = async (params) => {
+    console.log(`Datos evento a modificar ${JSON.stringify(params)}` );
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/eventos/`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+};
+
+const obtenerEntradas = async(id) =>{
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'GET',
+        };
+        const respuesta = await consultarApi(`${apiUrl}/entrada/${id}`, opciones);
+        return respuesta;
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
+
+const entradaModificar = async (params, id) => {
+    console.log(`Datos de entrada a modificar ${JSON.stringify(params)} id ${id}` );
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/entradas/org/${id}`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+};
+
+const comprarEntradas = async (params, id) => {
+    console.log(`Datos de entrada a comprar ${JSON.stringify(params)} id ${id}` );
+    if (auth.checkAuth()) {
+        const token = sessionStorage.getItem('token');
+        const opciones = {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params),
+        };
+        try {
+            const respuesta = await consultarApi(`${apiUrl}/entradas/compra/${id}`, opciones);
+            return respuesta; // Devuelve la respuesta para manejarla en enviarDatos
+        } catch (error) {
+            console.error('Error en registro:', error);
+            throw error; // Re-lanza el error para manejarlo en enviarDatos
+        }
+    } else {
+        console.log('Restringido!!! No hay sesion activa');
+    }
+}
 
 
 export const conexionApi = {
     consultarApi, login, registro, obtenerDatosUsuarios, modificarDatosUsuario, modificarPassword, 
-    listarUsuarios, adminModificarRol, adminEliminarUsuario, borrarEvento, eventosOrganizador
+    listarUsuarios, adminModificarRol, adminEliminarUsuario, borrarEvento, eventosOrganizador, obtenerEventoId, 
+    eventoModificar, eventoCrear, obtenerEntradas,entradaModificar, comprarEntradas
 }

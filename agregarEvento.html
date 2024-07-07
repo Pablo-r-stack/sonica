@@ -51,41 +51,39 @@
     <main>
         <section class="sectionContacto">
             <h1 class="titulo-crearevento">Crear Nuevo Evento</h1>
-            <form class="formContacto" action="">
-                <label for="nombre">Nombre del Evento:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del evento">
-
-                <label for="fecha">Fecha (dd-mm-aaaa):</label>
-                <input type="text" id="fecha" name="fecha" placeholder="Ingrese la fecha del evento (dd-mm-aaaa)">
-
+            <form class="formContacto" action="" data-formEvento>
+                <label for="titulo">Nombre:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Nombre del Evento" >
+            
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" placeholder="Fecha del Evento" >
+            
                 <label for="lugar">Lugar:</label>
-                <input type="text" id="lugar" name="lugar" placeholder="Ingrese el lugar del evento">
-
-                <label for="descripcion">Descripción:</label>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10"
-                    placeholder="Ingrese una descripcion"></textarea>
-
-                <label for="hora">Hora (HH:mm):</label>
-                <input type="text" id="hora" name="hora" placeholder="Ingrese la hora del evento (HH:mm)">
-
+                <input type="text" id="lugar" name="lugar" placeholder="Lugar del Evento" >
+            
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" placeholder="Hora del Evento" >
+            
                 <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" placeholder="Ingrese la dirección del evento">
-
-                <label for="numeroEntrada">Cantidad</label>
-                <input type="number" id="numeroEntrada" name="numeroEntrada"
-                    placeholder="Ingrese la cantidad de entradas">
-
-                <label for="precio">Precio:</label>
-                <input type="number" id="precio" name="precio" placeholder="Ingrese el precio">
-
-                <label for=" mapa">Mapa (URL de Google Maps):</label>
-                <input type="text" id="mapa" name="mapa" placeholder="Ingrese la URL del mapa de Google Maps">
-
-                <label for="imagen">URL de la Imagen:</label>
-                <input type="text" id="imagen" name="imagen" placeholder="Ingrese la URL de la imagen del evento">
-
-                <button class="btn-contacto" type="submit">Crear Evento</button>
+                <input type="text" id="direccion" name="direccion" placeholder="Direccion del Evento" >
+            
+                <label for="coordenadas">Mapa:</label>
+                <input type="text" id="coordenadas" name="coordenadas" placeholder="Mapa del Evento">
+            
+                <label for="imagen">Imagen:</label>
+                <input type="text" id="imagen" name="imagen" placeholder="Imagen del Evento">
+            
+                <label for="descripcion">Descripción:</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Ingrese una descripcion"></textarea>
+            
+                <label for="numEntradas">Número de Entradas:</label>
+                <input type="number" id="numEntradas" name="numEntradas" placeholder="Número de Entradas" >
+                <label for="numEntradas">Precio Entradas:</label>
+                <input type="number" id="precioEntrada" name="precioEntrada" placeholder="$1000.00" >
+            
+                <button class="btn-contacto" type="submit">Registrar</button>
             </form>
+            
             <div id="mensajeValidacion">
             </div>
         </section>
@@ -101,8 +99,8 @@
             <li><a href="/soporte.html">Soporte</a></li>
         </ul>
     </footer>
-    <script src="js/nuevoEvento.js"></script>
-    <script src="Js/validacion.js"></script>
+    <script type="module" src="Js/cargaEvento.js"></script>
+    <!-- <script type="module" src="Js/validacion.js"></script> -->
 
 </body>
 
