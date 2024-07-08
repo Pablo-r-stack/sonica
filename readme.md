@@ -10,6 +10,7 @@
 ## Descripcion del Proyecto
 Sonica es una Webapp responsiva informativa sin backend que muestra mediante el acceso a una landing page distintos eventos musicales recientes.   
 Al hacer click en un evento muestra la banda/organizador, del mismo asi como su ubicación geografica y una reseña sobre de que trata. 
+Esta version integra el consumo de datos del backend
 
 Permite mantener informado a los usuarios sobre distintos recitales/festivales que se llevaron o se llevaran a cabo. Tambien incluye una breve reseña sobre la banda/ artista/ organizador asi como su genero musical.
 
